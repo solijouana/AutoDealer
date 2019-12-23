@@ -12,5 +12,6 @@ namespace AutoDealer.Data.Vehicle
         public string ManufacturerName { get; set; }
 
         public virtual ICollection<Model> Models { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

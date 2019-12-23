@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseType\BaseEntity.cs" />
+    <Compile Include="Vehicle\Car.cs" />
+    <Compile Include="Vehicle\Car_Gallery.cs" />
     <Compile Include="Vehicle\Manufacturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle\Model.cs" />
