@@ -1,0 +1,5 @@
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Services.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Services.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CoreCompileInputs.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.pdb

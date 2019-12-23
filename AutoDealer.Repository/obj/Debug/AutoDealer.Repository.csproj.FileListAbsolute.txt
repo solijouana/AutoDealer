@@ -1,0 +1,5 @@
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Repository.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Repository.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csproj.CoreCompileInputs.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.pdb
