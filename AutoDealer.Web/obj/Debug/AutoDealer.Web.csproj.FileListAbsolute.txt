@@ -100,3 +100,15 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.SqlServer.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.xml
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.SqlServer.xml
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Data.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Repository.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Data.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Data.dll.config
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Repository.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Repository.dll.config
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Services.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Utilities.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Services.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Utilities.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\Ninject.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\Ninject.xml

@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationContext\AutoDealerContext.cs" />
+    <Compile Include="DataTransactions\IRepository.cs" />
+    <Compile Include="DataTransactions\Repository.cs" />
     <Compile Include="Migrations\201912241032101_Init_DataBase.cs" />
     <Compile Include="Migrations\201912241032101_Init_DataBase.designer.cs">
       <DependentUpon>201912241032101_Init_DataBase.cs</DependentUpon>
