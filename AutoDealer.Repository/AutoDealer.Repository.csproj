@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}</ProjectGuid>
+    <ProjectGuid>{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AutoDealer.Repository</RootNamespace>
@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationContext\AutoDealerContext.cs" />
+    <Compile Include="Migrations\201912241032101_Init_DataBase.cs" />
+    <Compile Include="Migrations\201912241032101_Init_DataBase.designer.cs">
+      <DependentUpon>201912241032101_Init_DataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +68,11 @@
       <Project>{59413a6a-6782-4421-b181-ecee92256f45}</Project>
       <Name>AutoDealer.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912241032101_Init_DataBase.resx">
+      <DependentUpon>201912241032101_Init_DataBase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

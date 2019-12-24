@@ -1,8 +1,3 @@
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.pdb
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csproj.CoreCompileInputs.cache
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.pdb
 D:\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.dll
 D:\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.pdb
 D:\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csprojAssemblyReference.cache
@@ -10,3 +5,9 @@ D:\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csproj.CoreComp
 D:\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.dll
 D:\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.pdb
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.dll.config
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csprojAssemblyReference.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csproj.CoreCompileInputs.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.pdb

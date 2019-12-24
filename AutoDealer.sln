@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDealer.Utilities", "Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDealer.Services", "AutoDealer.Services\AutoDealer.Services.csproj", "{F6A5C10D-94D2-4315-BEF1-0862E9DBDC53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDealer.Repository", "AutoDealer.Repository\AutoDealer.Repository.csproj", "{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoDealer.Repository", "AutoDealer.Repository\AutoDealer.Repository.csproj", "{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{F6A5C10D-94D2-4315-BEF1-0862E9DBDC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6A5C10D-94D2-4315-BEF1-0862E9DBDC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6A5C10D-94D2-4315-BEF1-0862E9DBDC53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5D1C377-6AAE-495F-BCFA-B4FF805EBC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE19F974-3270-4CE4-B2E7-5BFA332EBBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

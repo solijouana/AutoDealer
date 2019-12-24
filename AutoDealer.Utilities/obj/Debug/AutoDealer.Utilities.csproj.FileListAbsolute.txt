@@ -1,12 +1,11 @@
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.pdb
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csproj.CoreCompileInputs.cache
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.pdb
 D:\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.dll
 D:\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.pdb
 D:\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csprojAssemblyReference.cache
 D:\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csproj.CoreCompileInputs.cache
 D:\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.dll
 D:\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.pdb
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csprojAssemblyReference.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.Utilities.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csproj.CoreCompileInputs.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.pdb
