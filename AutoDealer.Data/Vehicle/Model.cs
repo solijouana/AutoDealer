@@ -14,6 +14,9 @@ namespace AutoDealer.Data.Vehicle
         [MaxLength(200)]
         public string ModelTitle { get; set; }
 
+        [Display(Name = "حذف")]
+        public bool IsDelete { get; set; }
+
         public Nullable<int> ParentID { get; set; }
 
         public virtual Model Model1 { get; set; }

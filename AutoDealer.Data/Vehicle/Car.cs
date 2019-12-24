@@ -56,6 +56,9 @@ namespace AutoDealer.Data.Vehicle
         [DataType(DataType.Date)]
         public DateTime CreateTime { get; set; }
 
+        [Display(Name ="حذف")]
+        public bool IsDelete { get; set; }
+
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }
     }

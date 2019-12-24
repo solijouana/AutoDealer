@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseType\BaseEntity.cs" />
-    <Compile Include="Dealer\Dealer.cs" />
     <Compile Include="Vehicle\Car.cs" />
     <Compile Include="Vehicle\Car_Gallery.cs" />
     <Compile Include="Vehicle\Manufacturer.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Vehicle\Model.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

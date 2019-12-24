@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoDealer.Repository\AutoDealer.Repository.csproj">
+      <Project>{d5d1c377-6aae-495f-bcfa-b4ff805ebc81}</Project>
+      <Name>AutoDealer.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
