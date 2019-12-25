@@ -44,6 +44,36 @@ namespace AutoDealer.Web.UOW
             }
         }
 
+        private IManufacturerServices _manufacturerServices;
+
+        public IManufacturerServices ManufacturerServices
+        {
+            get
+            {
+                if (_manufacturerServices == null)
+                {
+                    _manufacturerServices=new ManufacturerServices(new Repository<Manufacturer>(_context));
+                }
+
+                return _manufacturerServices;
+            }
+        }
+
+        private IModelServices _modelServices;
+
+        public IModelServices ModelServices
+        {
+            get
+            {
+                if (_modelServices == null)
+                {
+                    _modelServices=new ModelServices(new Repository<Model>(_context));
+                }
+
+                return _modelServices;
+            }
+        }
+
 
         public void Dispose()
         {
