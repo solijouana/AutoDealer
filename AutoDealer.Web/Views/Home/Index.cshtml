@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "صفحه اصلی";
 }
 
 <div class="wrapper_1">
@@ -11,5 +11,12 @@
 @Html.Action("LastCars")
 @Html.Action("Banner")
 <div class="wrapper_2">
-    <h2>Index</h2>
+    <div class="right">
+        @Html.Action("RecentBlog")
+
+        @Html.Action("ViewBox")
+    </div>
+    <div class="left">
+        @Html.Action("CarNews")
+    </div>
 </div>

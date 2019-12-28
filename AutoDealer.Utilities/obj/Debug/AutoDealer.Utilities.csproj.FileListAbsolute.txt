@@ -9,3 +9,4 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\bin\Debug\AutoDealer.U
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csproj.CoreCompileInputs.cache
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Utilities\obj\Debug\AutoDealer.Utilities.csprojAssemblyReference.cache

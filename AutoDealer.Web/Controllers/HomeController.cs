@@ -29,5 +29,20 @@ namespace AutoDealer.Web.Controllers
             return PartialView();
         }
 
+        public ActionResult RecentBlog()
+        {
+            return PartialView();
+        }
+
+        public ActionResult ViewBox()
+        {
+            return PartialView();
+        }
+
+        public ActionResult CarNews()
+        {
+            return PartialView();
+        }
+
     }
 }

@@ -317,6 +317,9 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
     <Content Include="Views\Home\LastCars.cshtml" />
+    <Content Include="Views\Home\RecentBlog.cshtml" />
+    <Content Include="Views\Home\ViewBox.cshtml" />
+    <Content Include="Views\Home\CarNews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

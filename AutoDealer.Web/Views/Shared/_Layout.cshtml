@@ -17,7 +17,7 @@
     <meta property="og:description" content="Auto Dealer HTML - Responsive HTML Auto Dealer Template" />
     <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
     <!-- Page Title -->
-    <title>Home</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" type="text/css" href="/Content/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/style980.css" />
     <link rel="stylesheet" type="text/css" href="/Content/css/style800.css" />
@@ -74,6 +74,7 @@
     <div id="content">
         <div class="content">
             @RenderBody()
+            <div class="clear"></div>
         </div>
     </div>
     <!--EOF CONTENT-->
