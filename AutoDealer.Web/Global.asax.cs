@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using AutoDealer.Web.IOC;
 
 namespace AutoDealer.Web
 {
@@ -13,6 +14,7 @@ namespace AutoDealer.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ControllerBuilder.Current.SetControllerFactory(new NinjectController());
         }
     }
 }

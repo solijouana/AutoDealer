@@ -17,7 +17,7 @@ namespace AutoDealer.Web.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index",Controller="Home", id = UrlParameter.Optional }
+                new { Controller="Home",action = "Index", id = UrlParameter.Optional }
             );
         }
     }

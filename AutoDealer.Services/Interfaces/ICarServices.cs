@@ -10,6 +10,6 @@ namespace AutoDealer.Services.Interfaces
         void EditCar(Car editedCar);
         void DeleteCar(Car car);
         void DeleteCar(int carId);
-        Task<Car> GetCarById(int carId);
+        Car GetCarById(int carId);
     }
 }

@@ -1,18 +1,27 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
 using AutoDealer.Services.Interfaces;
 
 namespace AutoDealer.Services.Impelementations
 {
-   public class ManufacturerServices:IManufacturerServices
-   {
-       private IRepository<Manufacturer> _manuRepository;
+    public class ManufacturerServices : IManufacturerServices
+    {
+        private IRepository<Manufacturer> _manuRepository;
 
-       public ManufacturerServices(IRepository<Manufacturer> manuRepository)
-       {
-           _manuRepository = manuRepository;
-       }
+        public ManufacturerServices(IRepository<Manufacturer> manuRepository)
+        {
+            _manuRepository = manuRepository;
+        }
+
+
+        public IEnumerable<Manufacturer> GetAllManufacturers()
+        {
+            return _manuRepository.Get(null).ToList();
+        }
 
         public void CreateManufacturer(Manufacturer newManufacturer)
         {
@@ -32,19 +41,31 @@ namespace AutoDealer.Services.Impelementations
             EditManufacturer(manufacturer);
         }
 
-        public async void DeleteManufacturer(int manufacturerId)
+        public void DeleteManufacturer(int manufacturerId)
         {
-            var manufacturer =await GetManufacturerById(manufacturerId);
-            if (manufacturer != null)
-            {
-                DeleteManufacturer(manufacturer);
-            }
+            var manufacturer = GetManufacturerById(manufacturerId);
+            DeleteManufacturer(manufacturer);
         }
 
-        public async Task<Manufacturer> GetManufacturerById(int manufacturerId)
+        public Manufacturer GetManufacturerById(int manufacturerId)
         {
-            return await _manuRepository.GetById(manufacturerId);
+            return _manuRepository.GetById(manufacturerId);
         }
+
+        public int ReturnManufacturer(int id)
+        {
+            var manufacturer = _manuRepository.GetById(id);
+            if (manufacturer != null)
+            {
+                manufacturer.IsDelete = false;
+                EditManufacturer(manufacturer);
+                return (int)HttpStatusCode.OK;
+            }
+
+            return (int)HttpStatusCode.NotFound;
+
+        }
+
         public void Dispose()
         {
             _manuRepository?.Dispose();

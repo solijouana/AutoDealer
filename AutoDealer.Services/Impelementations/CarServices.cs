@@ -31,16 +31,16 @@ namespace AutoDealer.Services.Impelementations
             EditCar(car);
         }
 
-        public async void DeleteCar(int carId)
+        public void DeleteCar(int carId)
         {
-            var car = await GetCarById(carId);
+            var car = GetCarById(carId);
             car.IsDelete = true;
             EditCar(car);
         }
 
-        public async Task<Car> GetCarById(int carId)
+        public Car GetCarById(int carId)
         {
-            return await _carRepository.GetById(carId);
+            return _carRepository.GetById(carId);
         }
 
         public void Dispose()

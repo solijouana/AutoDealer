@@ -154,10 +154,6 @@
     <Content Include="Areas\Admin\Content\css\typicons.min.css" />
     <Content Include="Areas\Admin\Content\css\weather-icons.css" />
     <Content Include="Areas\Admin\Content\css\weather-icons.min.css" />
-    <Content Include="Areas\Admin\Content\CustomJs\Custom.js" />
-    <Content Include="Areas\Admin\Content\CustomJs\Singer.js" />
-    <Content Include="Areas\Admin\Content\CustomJs\Slider.js" />
-    <Content Include="Areas\Admin\Content\CustomJs\User.js" />
     <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Areas\Admin\Content\fonts\typicons.svg" />
@@ -296,6 +292,7 @@
     <Content Include="Areas\Admin\Content\js\toastr\toastr.min.js" />
     <Content Include="Areas\Admin\Content\js\validation\bootstrapValidator.js" />
     <Content Include="Areas\Admin\Content\js\validation\bootstrapValidator.min.js" />
+    <Content Include="Areas\Admin\Content\ManufacturerJS\DeleteManufacturer.js" />
     <Content Include="Areas\Admin\Content\sound\alert.mp3" />
     <Content Include="Areas\Admin\Content\swf\copy_csv_xls.swf" />
     <Content Include="Areas\Admin\Content\swf\copy_csv_xls_pdf.swf" />
@@ -740,9 +737,19 @@
     <Content Include="Areas\Admin\Content\js\tagsinput\bootstrap-tagsinput.min.js.map" />
     <Content Include="Areas\Admin\Content\js\toastr\toastr.min.js.map" />
     <Content Include="Areas\Admin\Content\js\validation\bootstrapValidator.min.js.map" />
+    <Content Include="Areas\Admin\Views\Manufacturers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Manufacturers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Manufacturers\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -750,6 +757,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManufacturersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

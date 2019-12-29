@@ -32,18 +32,18 @@ namespace AutoDealer.Services.Impelementations
             _carRepository.Save();
         }
 
-        public async void DeleteCar_Gallery(int carId)
+        public void DeleteCar_Gallery(int carId)
         {
-            var car_Gallery =await _carRepository.GetById(carId);
+            var car_Gallery =_carRepository.GetById(carId);
             if (car_Gallery != null)
             {
                 DeleteCar_Gallery(car_Gallery);
             }
         }
 
-        public async Task<Car_Gallery> GetCar_GalleryById(int car_GalleryId)
+        public Car_Gallery GetCar_GalleryById(int car_GalleryId)
         {
-            return await _carRepository.GetById(car_GalleryId);
+            return _carRepository.GetById(car_GalleryId);
         }
 
         public void Dispose()

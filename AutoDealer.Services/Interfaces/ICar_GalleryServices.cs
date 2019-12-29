@@ -10,6 +10,6 @@ namespace AutoDealer.Services.Interfaces
         void EditCar_Gallery(Car_Gallery editedCar_Gallery);
         void DeleteCar_Gallery(Car_Gallery car_Gallery);
         void DeleteCar_Gallery(int carId);
-        Task<Car_Gallery> GetCar_GalleryById(int car_GalleryId);
+        Car_Gallery GetCar_GalleryById(int car_GalleryId);
     }
 }

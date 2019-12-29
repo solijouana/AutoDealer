@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AutoDealer.Data.Vehicle.Manufacturer>
+
+
+@{
+    ViewBag.Title = "لیست سازنده ها";
+}
+
+<h2>لیست سازنده ها</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">افزودن سازنده</a>
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ManufacturerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerName)
+            </td>
+            <td>
+                @if (item.IsDelete)
+                {
+                    <p>حذف شده</p>
+                }
+                else
+                {
+                    <p>حذف نشده</p>
+                }
+            </td>
+            <td>
+                <a class="btn btn-yellow btn-xs" href="@Url.Action("Edit",new {id=item.ID})">
+                    <i class="glyphicon glyphicon-alert"></i>
+                </a> |
+                @if (item.IsDelete)
+                {
+                    <a class="btn btn-primary btn-xs" style="cursor: pointer" onclick="Return(@item.ID)">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-danger btn-xs" style="cursor: pointer" onclick="Delete(@item.ID)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>

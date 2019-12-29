@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
 using AutoDealer.Services.Interfaces;
@@ -12,6 +14,11 @@ namespace AutoDealer.Services.Impelementations
         public ModelServices(IRepository<Model> modelRepository)
         {
             _modelRepository = modelRepository;
+        }
+
+        public IEnumerable<Model> GetAllModels()
+        {
+            return _modelRepository.Get(null).ToList();
         }
 
         public void CreateModel(Model newModel)
@@ -32,18 +39,18 @@ namespace AutoDealer.Services.Impelementations
             EditModel(model);
         }
 
-        public async void DeleteModel(int modelId)
+        public void DeleteModel(int modelId)
         {
-            var model =await GetModelById(modelId);
+            var model =GetModelById(modelId);
             if (model != null)
             {
                 DeleteModel(model);
             }
         }
 
-        public async Task<Model> GetModelById(int modelId)
+        public Model GetModelById(int modelId)
         {
-            return await _modelRepository.GetById(modelId);
+            return _modelRepository.GetById(modelId);
 
         }
         public void Dispose()

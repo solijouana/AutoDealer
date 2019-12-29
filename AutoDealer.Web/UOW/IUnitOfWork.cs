@@ -7,10 +7,10 @@ using AutoDealer.Services.Interfaces;
 
 namespace AutoDealer.Web.UOW
 {
-    interface IUnitOfWork:IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         ICarServices CarServices { get; }
-        ICar_GalleryServices Car_GalleryServices { get; }   
+        ICar_GalleryServices Car_GalleryServices { get; }
         IManufacturerServices ManufacturerServices { get; }
         IModelServices ModelServices { get; }
     }

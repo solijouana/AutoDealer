@@ -30,9 +30,9 @@ namespace AutoDealer.Repository.DataTransactions
             return query;
         }
 
-        public async Task<TEntity> GetById(int id)
+        public  TEntity GetById(int id)
         {
-            return await _dbSet.FirstOrDefaultAsync(c => c.ID == id);
+            return _dbSet.FirstOrDefault(c => c.ID == id);
         }
 
         public void Insert(TEntity entity)
@@ -56,14 +56,14 @@ namespace AutoDealer.Repository.DataTransactions
             Delete(entity);
         }
 
-        public async Task<bool>  IsExist(Expression<Func<TEntity, bool>> condition)
+        public bool  IsExist(Expression<Func<TEntity, bool>> condition)
         {
-            return await _dbSet.AnyAsync(condition);
+            return _dbSet.Any(condition);
         }
 
-        public async void Save()
+        public void Save()
         {
-           await _context.SaveChangesAsync();
+          _context.SaveChanges();
         }
         #region Dispose
 

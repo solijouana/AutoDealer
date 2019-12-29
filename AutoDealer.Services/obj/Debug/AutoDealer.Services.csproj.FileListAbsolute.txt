@@ -6,16 +6,16 @@ D:\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.dll
 D:\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.pdb
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Services.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Services.pdb
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csprojAssemblyReference.cache
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CoreCompileInputs.cache
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\EntityFramework.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.pdb
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll.config
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.pdb
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.dll.config
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\EntityFramework.xml
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.pdb
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll.config
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csprojAssemblyReference.cache
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CoreCompileInputs.cache
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CopyComplete
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.dll
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.pdb
