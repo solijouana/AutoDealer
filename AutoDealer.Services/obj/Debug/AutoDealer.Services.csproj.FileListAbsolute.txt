@@ -19,3 +19,12 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Se
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CopyComplete
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.pdb
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.dll
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\EntityFramework.dll
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.pdb
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Data.dll.config
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.pdb
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\AutoDealer.Repository.dll.config
+D:\Projects\AutoDealer\AutoDealer.Services\bin\Debug\EntityFramework.xml
+D:\Projects\AutoDealer\AutoDealer.Services\obj\Debug\AutoDealer.Services.csproj.CopyComplete

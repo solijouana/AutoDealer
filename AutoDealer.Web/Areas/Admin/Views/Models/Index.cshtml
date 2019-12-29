@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "مدل ها";
+}
+
+<h2>لیست مدل ها</h2>
+
+<p>
+    <a class="btn btn-primary" onclick="create(0)">افزودن مدل</a>
+</p>
+
+<div class="listView">
+    @Html.Action("ListModel")
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                ...
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function create(id) {
+        $.get("/Admin/Models/Create/" + id,
+            function(res) {
+                $("#myModal").modal();
+                $("#ModalTitle").html("مدل جدید");
+                $("#modalBody").html(res);
+            });
+    }
+
+    function success() {
+        $("#myModal").modal("hide");
+    }
+</script>

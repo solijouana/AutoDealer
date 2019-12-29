@@ -740,6 +740,9 @@
     <Content Include="Areas\Admin\Views\Manufacturers\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Manufacturers\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Manufacturers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Models\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Models\ListModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Models\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -758,6 +761,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManufacturersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AutoDealer.Data.Vehicle.Model>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            <span>سازنده</span>
+        </th>
+        <th>
+            <span>مدل</span>
+        </th>
+        <th>
+            <span>وضعیت</span>
+        </th>
+        <th>
+            <span>زیر مدل</span>
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+            <td>@item.Manufacturers.ManufacturerName</td>
+            <td>@item.ModelTitle</td>
+            <td>@item.IsDelete</td>
+            <td>
+                @if (@item.Model2.Any())
+                {
+                    <ul>
+                        @foreach (var subModel in item.Model2)
+                        {
+                            <li>
+                                <a class="btn btn-warning btn-xs">
+                                    <i class="glyphicon glyphicon-alert"></i>
+                                </a> |
+                                <a class="btn btn-warning btn-xs">
+                                    <i class="glyphicon glyphicon-alert"></i>
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                }
+            </td>
+            <td>
+                <a class="btn btn-warning btn-xs">
+                    <i class="glyphicon glyphicon-alert"></i>
+                </a> |
+                <a class="btn btn-warning btn-xs">
+                    <i class="glyphicon glyphicon-alert"></i>
+                </a>
+            </td>
+        }
+    </tr>
+</table>
