@@ -9,6 +9,7 @@ namespace AutoDealer.Repository.ApplicationContext
         public DbSet<Car_Gallery> CarGalleries { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<SubModel> SubModels { get; set; }
 
     }
 }

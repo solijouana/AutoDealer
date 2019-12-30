@@ -45,10 +45,12 @@
     <Compile Include="Impelementations\Car_GalleryServices.cs" />
     <Compile Include="Impelementations\ManufacturerServices.cs" />
     <Compile Include="Impelementations\ModelServices.cs" />
+    <Compile Include="Impelementations\SubModelServices.cs" />
     <Compile Include="Interfaces\ICarServices.cs" />
     <Compile Include="Interfaces\ICar_GalleryServices.cs" />
     <Compile Include="Interfaces\IManufacturerServices.cs" />
     <Compile Include="Interfaces\IModelServices.cs" />
+    <Compile Include="Interfaces\ISubModelServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

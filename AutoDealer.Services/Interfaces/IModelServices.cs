@@ -12,6 +12,9 @@ namespace AutoDealer.Services.Interfaces
         void EditModel(Model editedModel);
         void DeleteModel(Model model);
         void DeleteModel(int modelId);
+        void DeleteHardModel(Model model);
+        void DeleteHardModel(int id);
         Model GetModelById(int modelId);
+        
     }
 }

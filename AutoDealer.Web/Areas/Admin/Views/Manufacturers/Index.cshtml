@@ -16,6 +16,9 @@
             @Html.DisplayNameFor(model => model.ManufacturerName)
         </th>
         <th>
+            <span>مدل</span>
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IsDelete)
         </th>
         <th></th>
@@ -28,6 +31,45 @@
                 @Html.DisplayFor(modelItem => item.ManufacturerName)
             </td>
             <td>
+                @if (item.Models.Any())
+                {
+                    <ul>
+                      @foreach(var modelManufacturers in item.Models)
+                        {
+                            <li>
+                                @modelManufacturers.ModelTitle
+                                <a class="btn btn-yellow btn-xs" href="@Url.Action("EditModel",new {id=modelManufacturers.ID})">
+                                    <i class="glyphicon glyphicon-alert"></i>
+                                </a> |
+                                <a class="btn btn-danger btn-xs" onclick="DeleteModel(@modelManufacturers.ID)">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a> |
+                                <a class="btn btn-primary btn-xs" href="@Url.Action("CreateSubModel",new{modelId=modelManufacturers.ID})">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </a>
+                                @if (modelManufacturers.SubModels.Any(m=>m.ModelID==modelManufacturers.ID))
+                                {
+                                <ul>
+                                    @foreach (var subModelManufacturer in modelManufacturers.SubModels.Where(m=>m.ModelID==modelManufacturers.ID))
+                                    {
+                                        <li>
+                                            @subModelManufacturer.SubModelTitle
+                                            <a class="btn btn-yellow btn-xs" href="@Url.Action("EditSubModel", new {id = subModelManufacturer.ID})">
+                                                <i class="glyphicon glyphicon-alert"></i>
+                                            </a> |
+                                            <a class="btn btn-danger btn-xs" onclick="DeleteSubModel(@subModelManufacturer.ID)">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </a> |
+                                        </li>
+                                    }
+                                </ul>
+                                }
+                            </li>                         
+                        }
+                    </ul>
+                }
+            </td>
+            <td>
                 @if (item.IsDelete)
                 {
                     <p>حذف شده</p>
@@ -38,22 +80,24 @@
                 }
             </td>
             <td>
-                <a class="btn btn-yellow btn-xs" href="@Url.Action("Edit",new {id=item.ID})">
+                <a class="btn btn-yellow btn-sm" href="@Url.Action("Edit",new {id=item.ID})">
                     <i class="glyphicon glyphicon-alert"></i>
                 </a> |
                 @if (item.IsDelete)
                 {
-                    <a class="btn btn-primary btn-xs" style="cursor: pointer" onclick="Return(@item.ID)">
+                    <a class="btn btn-primary btn-sm" style="cursor: pointer" onclick="Return(@item.ID)">
                         <i class="glyphicon glyphicon-refresh"></i>
                     </a>
                 }
                 else
                 {
-                    <a class="btn btn-danger btn-xs" style="cursor: pointer" onclick="Delete(@item.ID)">
+                    <a class="btn btn-danger btn-sm" style="cursor: pointer" onclick="Delete(@item.ID)">
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>
                 }
-
+                | <a class="btn btn-primary btn-sm" href="@Url.Action("CreateModel",new{manufacturerId=item.ID,modelId=0})">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
             </td>
         </tr>
     }

@@ -74,6 +74,21 @@ namespace AutoDealer.Web.UOW
             }
         }
 
+        private ISubModelServices _subModelServices;
+
+        public ISubModelServices SubModelServices
+        {
+            get
+            {
+                if (_subModelServices == null)
+                {
+                    _subModelServices=new SubModelServices(new Repository<SubModel>(_context));
+                }
+
+                return _subModelServices;
+            }
+        }
+
 
         public void Dispose()
         {

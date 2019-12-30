@@ -58,6 +58,22 @@
     <Compile Include="Migrations\201912241032101_Init_DataBase.designer.cs">
       <DependentUpon>201912241032101_Init_DataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912301327049_Add-HashSetToModelClass.cs" />
+    <Compile Include="Migrations\201912301327049_Add-HashSetToModelClass.designer.cs">
+      <DependentUpon>201912301327049_Add-HashSetToModelClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912301435310_AddSubModels-Table.cs" />
+    <Compile Include="Migrations\201912301435310_AddSubModels-Table.designer.cs">
+      <DependentUpon>201912301435310_AddSubModels-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912301455464_Add-ModelIDtoSubModl.cs" />
+    <Compile Include="Migrations\201912301455464_Add-ModelIDtoSubModl.designer.cs">
+      <DependentUpon>201912301455464_Add-ModelIDtoSubModl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912301522502_ExistSubModel-Entity.cs" />
+    <Compile Include="Migrations\201912301522502_ExistSubModel-Entity.designer.cs">
+      <DependentUpon>201912301522502_ExistSubModel-Entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +90,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912241032101_Init_DataBase.resx">
       <DependentUpon>201912241032101_Init_DataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912301327049_Add-HashSetToModelClass.resx">
+      <DependentUpon>201912301327049_Add-HashSetToModelClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912301435310_AddSubModels-Table.resx">
+      <DependentUpon>201912301435310_AddSubModels-Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912301455464_Add-ModelIDtoSubModl.resx">
+      <DependentUpon>201912301455464_Add-ModelIDtoSubModl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912301522502_ExistSubModel-Entity.resx">
+      <DependentUpon>201912301522502_ExistSubModel-Entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

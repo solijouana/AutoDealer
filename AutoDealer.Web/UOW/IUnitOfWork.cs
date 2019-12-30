@@ -13,5 +13,6 @@ namespace AutoDealer.Web.UOW
         ICar_GalleryServices Car_GalleryServices { get; }
         IManufacturerServices ManufacturerServices { get; }
         IModelServices ModelServices { get; }
+        ISubModelServices SubModelServices { get; }
     }
 }

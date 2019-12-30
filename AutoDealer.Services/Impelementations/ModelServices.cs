@@ -48,6 +48,20 @@ namespace AutoDealer.Services.Impelementations
             }
         }
 
+        public void DeleteHardModel(Model model)
+        {
+            _modelRepository.Delete(model);
+            _modelRepository.Save();
+        }
+
+        public void DeleteHardModel(int id)
+        {
+            var model = _modelRepository.GetById(id);
+
+            if (model!=null)
+                DeleteHardModel(model);
+        }
+
         public Model GetModelById(int modelId)
         {
             return _modelRepository.GetById(modelId);

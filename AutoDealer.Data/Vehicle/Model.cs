@@ -7,6 +7,7 @@ namespace AutoDealer.Data.Vehicle
 {
     public class Model : BaseEntity
     {
+
         public int ManufacturerId { get; set; }
 
         [Display(Name = "مدل")]
@@ -17,11 +18,9 @@ namespace AutoDealer.Data.Vehicle
         [Display(Name = "حذف")]
         public bool IsDelete { get; set; }
 
-        public Nullable<int> ParentID { get; set; }
-
-        public virtual Model Model1 { get; set; }
-        public virtual ICollection<Model> Model2 { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }
+
+        public virtual ICollection<SubModel> SubModels { get; set; }
 
     }
 }
