@@ -15,7 +15,27 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csproj.CopyComplete
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.pdb
+<<<<<<< HEAD
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddHashSetToModelClass.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddSubModelsTable.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddModelIDtoSubModl.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.ExistSubModelEntity.resources
+=======
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Repository.dll.config
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Repository.dll
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Repository.pdb
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Data.dll
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\EntityFramework.dll
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Data.pdb
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\AutoDealer.Data.dll.config
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\EntityFramework.xml
+D:\Projects\AutoDealer\AutoDealer.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csprojAssemblyReference.cache
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.Init_DataBase.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csproj.GenerateResource.cache
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csproj.CoreCompileInputs.cache
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csproj.CopyComplete
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.dll
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.pdb
+>>>>>>> db42847819b99528ec61e907f338b06d40443611
