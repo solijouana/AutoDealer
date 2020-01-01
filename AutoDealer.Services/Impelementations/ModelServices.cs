@@ -10,10 +10,12 @@ namespace AutoDealer.Services.Impelementations
     public class ModelServices : IModelServices
     {
         private IRepository<Model> _modelRepository;
+        private IRepository<SubModel> _subModelRepository;
 
-        public ModelServices(IRepository<Model> modelRepository)
+        public ModelServices(IRepository<Model> modelRepository, IRepository<SubModel> subModelRepository)
         {
             _modelRepository = modelRepository;
+            _subModelRepository = subModelRepository;
         }
 
         public IEnumerable<Model> GetAllModels()
@@ -57,7 +59,6 @@ namespace AutoDealer.Services.Impelementations
         public void DeleteHardModel(int id)
         {
             var model = _modelRepository.GetById(id);
-
             if (model!=null)
                 DeleteHardModel(model);
         }

@@ -67,7 +67,7 @@ namespace AutoDealer.Web.UOW
             {
                 if (_modelServices == null)
                 {
-                    _modelServices=new ModelServices(new Repository<Model>(_context));
+                    _modelServices=new ModelServices(new Repository<Model>(_context),new Repository<SubModel>(_context));
                 }
 
                 return _modelServices;
