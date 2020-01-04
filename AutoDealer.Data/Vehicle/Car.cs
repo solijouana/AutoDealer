@@ -56,8 +56,12 @@ namespace AutoDealer.Data.Vehicle
         [DataType(DataType.Date)]
         public DateTime CreateTime { get; set; }
 
-        [Display(Name ="حذف")]
+        [Display(Name = "حذف")]
         public bool IsDelete { get; set; }
+
+        [Display(Name = "آگهی ویژه")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public bool Specific { get; set; }
 
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }

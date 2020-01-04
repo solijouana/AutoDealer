@@ -39,3 +39,4 @@ D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.csp
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.dll
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.pdb
 >>>>>>> db42847819b99528ec61e907f338b06d40443611
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.Add_SpecificintoCarTAble.resources

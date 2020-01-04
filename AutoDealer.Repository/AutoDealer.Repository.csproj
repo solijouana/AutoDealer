@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201912301522502_ExistSubModel-Entity.designer.cs">
       <DependentUpon>201912301522502_ExistSubModel-Entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001040737583_Add_SpecificintoCarTAble.cs" />
+    <Compile Include="Migrations\202001040737583_Add_SpecificintoCarTAble.designer.cs">
+      <DependentUpon>202001040737583_Add_SpecificintoCarTAble.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912301522502_ExistSubModel-Entity.resx">
       <DependentUpon>201912301522502_ExistSubModel-Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001040737583_Add_SpecificintoCarTAble.resx">
+      <DependentUpon>202001040737583_Add_SpecificintoCarTAble.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
