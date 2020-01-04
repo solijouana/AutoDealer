@@ -78,6 +78,14 @@
     <Compile Include="Migrations\202001040737583_Add_SpecificintoCarTAble.designer.cs">
       <DependentUpon>202001040737583_Add_SpecificintoCarTAble.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001040801133_Add Option Entity and option_category entity.cs" />
+    <Compile Include="Migrations\202001040801133_Add Option Entity and option_category entity.designer.cs">
+      <DependentUpon>202001040801133_Add Option Entity and option_category entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001040804256_add dbsets.cs" />
+    <Compile Include="Migrations\202001040804256_add dbsets.designer.cs">
+      <DependentUpon>202001040804256_add dbsets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001040737583_Add_SpecificintoCarTAble.resx">
       <DependentUpon>202001040737583_Add_SpecificintoCarTAble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001040801133_Add Option Entity and option_category entity.resx">
+      <DependentUpon>202001040801133_Add Option Entity and option_category entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001040804256_add dbsets.resx">
+      <DependentUpon>202001040804256_add dbsets.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

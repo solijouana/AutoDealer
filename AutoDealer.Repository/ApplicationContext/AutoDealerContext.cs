@@ -10,6 +10,8 @@ namespace AutoDealer.Repository.ApplicationContext
         public DbSet<Model> Models { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
         public DbSet<SubModel> SubModels { get; set; }
+        public DbSet<Option> Options { get; set; }
+        public DbSet<Option_Category> Optotion_Categories { get; set; }
 
     }
 }
