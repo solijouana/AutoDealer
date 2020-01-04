@@ -14,5 +14,7 @@ namespace AutoDealer.Web.UOW
         IManufacturerServices ManufacturerServices { get; }
         IModelServices ModelServices { get; }
         ISubModelServices SubModelServices { get; }
+        IOptionServices OptionServices { get; }
+        IOption_CategoryServices Option_CategoryServices { get; }
     }
 }

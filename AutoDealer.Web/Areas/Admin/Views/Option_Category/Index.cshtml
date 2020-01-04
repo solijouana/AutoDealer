@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AutoDealer.Data.Vehicle.Option_Category>
+
+@{
+    ViewBag.Title = "دسته بندی آپشن ها";
+    int count = 1;
+}
+
+<h2>لیست دسته بندی آپشن ها</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">افزودن دسته</a>
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            <span>#</span>
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Op_CategortyTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.IsDelete)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var optionCategory in Model)
+    {
+        <tr>
+            <td>
+                @(count++)
+            </td>
+            <td>
+                @optionCategory.Op_CategortyTitle
+            </td>
+            <td>
+                @if (optionCategory.IsDelete)
+                {
+                    <span>حذف شده</span>
+                }
+                else
+                {
+                    <span>حدف نشده</span>
+                }
+            </td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="@Url.Action("Edit",new{id=optionCategory.ID})">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                @if (optionCategory.IsDelete)
+                {
+
+                    <a class="btn btn-primary btn-sm" onclick="ReturnCategory(@optionCategory.ID)">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-danger btn-sm" onclick="DeleteCategory(@optionCategory.ID)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>

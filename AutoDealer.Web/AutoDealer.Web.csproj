@@ -294,6 +294,7 @@
     <Content Include="Areas\Admin\Content\js\validation\bootstrapValidator.min.js" />
     <Content Include="Areas\Admin\Content\ManufacturerJS\DeleteManufacturer.js" />
     <Content Include="Areas\Admin\Content\ModelJS\DeleteModel.js" />
+    <Content Include="Areas\Admin\Content\OptionJS\Option_Category.js" />
     <Content Include="Areas\Admin\Content\sound\alert.mp3" />
     <Content Include="Areas\Admin\Content\swf\copy_csv_xls.swf" />
     <Content Include="Areas\Admin\Content\swf\copy_csv_xls_pdf.swf" />
@@ -745,6 +746,9 @@
     <Content Include="Areas\Admin\Views\Manufacturers\EditModel.cshtml" />
     <Content Include="Areas\Admin\Views\Manufacturers\CreateSubModel.cshtml" />
     <Content Include="Areas\Admin\Views\Manufacturers\EditSubModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Option_Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Option_Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Option_Category\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -763,6 +767,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManufacturersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Option_CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -89,6 +89,36 @@ namespace AutoDealer.Web.UOW
             }
         }
 
+        private IOptionServices _optionServices;
+
+        public IOptionServices OptionServices
+        {
+            get
+            {
+                if (_optionServices == null)
+                {
+                    _optionServices=new OptionServices(new Repository<Option>(_context));
+                }
+
+                return _optionServices;
+            }
+        }
+
+        private IOption_CategoryServices _option_CategoryServices;
+
+        public IOption_CategoryServices Option_CategoryServices
+        {
+            get
+            {
+                if (_option_CategoryServices == null)
+                {
+                    _option_CategoryServices=new Option_CategoryServices(new Repository<Option_Category>(_context));
+                }
+
+                return _option_CategoryServices;
+            }
+        }
+
 
         public void Dispose()
         {
