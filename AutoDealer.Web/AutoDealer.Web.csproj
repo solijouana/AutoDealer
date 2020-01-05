@@ -749,6 +749,8 @@
     <Content Include="Areas\Admin\Views\Option_Category\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Option_Category\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Option_Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Option_Category\CreateOption.cshtml" />
+    <Content Include="Areas\Admin\Views\Option_Category\EditOption.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

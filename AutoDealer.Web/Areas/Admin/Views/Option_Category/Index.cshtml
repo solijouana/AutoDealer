@@ -20,6 +20,9 @@
             @Html.DisplayNameFor(m => m.Op_CategortyTitle)
         </th>
         <th>
+            آپشن ها
+        </th>
+        <th>
             @Html.DisplayNameFor(m => m.IsDelete)
         </th>
         <th></th>
@@ -33,6 +36,24 @@
             </td>
             <td>
                 @optionCategory.Op_CategortyTitle
+            </td>
+            <td>
+                @if (optionCategory.Options.Any())
+                {
+                    <ul>
+                        @foreach (var option in optionCategory.Options.Where(o => o.Op_CategoryID == optionCategory.ID))
+                        {
+                            <li>@option.OptionTitle
+                                <a class="btn btn-warning btn-xs" href="@Url.Action("EditOption",new{id=optionCategory.ID})">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                                </a>
+                                <a class="btn btn-danger btn-xs">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
             </td>
             <td>
                 @if (optionCategory.IsDelete)
@@ -61,6 +82,9 @@
                         <i class="glyphicon glyphicon-trash"></i>
                     </a>
                 }
+                <a class="btn btn-primary btn-sm" href="@Url.Action("CreateOption",new{id=optionCategory.ID})">
+                    <i class="glyphicon glyphicon-plus"></i>
+                </a>
 
             </td>
         </tr>

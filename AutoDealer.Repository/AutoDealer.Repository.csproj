@@ -86,6 +86,10 @@
     <Compile Include="Migrations\202001040804256_add dbsets.designer.cs">
       <DependentUpon>202001040804256_add dbsets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001041457224_update.cs" />
+    <Compile Include="Migrations\202001041457224_update.designer.cs">
+      <DependentUpon>202001041457224_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001040804256_add dbsets.resx">
       <DependentUpon>202001040804256_add dbsets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001041457224_update.resx">
+      <DependentUpon>202001041457224_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

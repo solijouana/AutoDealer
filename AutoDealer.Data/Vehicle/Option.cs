@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using AutoDealer.Data.BaseType;
 
 namespace AutoDealer.Data.Vehicle
@@ -14,6 +15,7 @@ namespace AutoDealer.Data.Vehicle
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public bool IsDelete { get; set; }
 
+        [ForeignKey("OptionCategory")]
         public int Op_CategoryID { get; set; }
         public virtual Option_Category OptionCategory { get; set; }
     }

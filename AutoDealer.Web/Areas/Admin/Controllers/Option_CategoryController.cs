@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
 using System.Web.Mvc;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Web.UOW;
@@ -41,7 +42,7 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
         {
             var category = unitOfWork.Option_CategoryServices.GetOption_CategoryById(id);
 
-            if (category==null)
+            if (category == null)
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
             return View(category);
@@ -68,10 +69,10 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
             {
                 unitOfWork.Option_CategoryServices.DeleteOption_Category(category);
 
-                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+                return Json(new { status = "Done" }, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult ReturnCategory(int id)
@@ -82,10 +83,57 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
             {
                 unitOfWork.Option_CategoryServices.ReturnOption_Category(category);
 
-                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+                return Json(new { status = "Done" }, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
         }
+
+        #region Options
+
+        public ActionResult CreateOption(int id)
+        {
+            return View(new Option()
+            {
+                Op_CategoryID = id
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateOption(Option newOption)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.OptionServices.CreateOption(newOption);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(newOption);
+        }
+
+        public ActionResult EditOption(int id)
+        {
+            //TODO
+            return View(unitOfWork.OptionServices.GetOptionById(id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditOption([Bind(Include = "ID,OptionTitle,IsDelete,Op_CategoryID")] Option editedOption)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.OptionServices.EditOption(editedOption);
+
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.op_CategoryID = new SelectList(unitOfWork.Option_CategoryServices.GetAllOption_Category(),"ID", "Op_CategortyTitle",editedOption.ID);
+            return View(editedOption);
+        }
+
+        #endregion
     }
 }
