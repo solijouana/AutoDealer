@@ -115,13 +115,14 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
 
         public ActionResult EditOption(int id)
         {
-            //TODO
-            return View(unitOfWork.OptionServices.GetOptionById(id));
+            var option = unitOfWork.OptionServices.GetOptionById(id);
+            ViewBag.Op_CategoryId = new SelectList(unitOfWork.Option_CategoryServices.GetAllOption_Category(), "ID", "Op_CategortyTitle", option.Op_CategoryID);
+            return View(option);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditOption([Bind(Include = "ID,OptionTitle,IsDelete,Op_CategoryID")] Option editedOption)
+        public ActionResult EditOption([Bind(Include = "ID,OptionTitle,IsDelete,Op_CategoryId")] Option editedOption)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +131,7 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.op_CategoryID = new SelectList(unitOfWork.Option_CategoryServices.GetAllOption_Category(),"ID", "Op_CategortyTitle",editedOption.ID);
+            ViewBag.Op_CategoryId = new SelectList(unitOfWork.Option_CategoryServices.GetAllOption_Category(), "ID", "Op_CategortyTitle", editedOption.Op_CategoryID);
             return View(editedOption);
         }
 
