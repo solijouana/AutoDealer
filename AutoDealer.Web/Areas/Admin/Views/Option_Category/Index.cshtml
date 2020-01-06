@@ -44,10 +44,10 @@
                         @foreach (var option in optionCategory.Options.Where(o => o.Op_CategoryID == optionCategory.ID))
                         {
                             <li>@option.OptionTitle
-                                <a class="btn btn-warning btn-xs" href="@Url.Action("EditOption",new{id=optionCategory.ID})">
+                                <a class="btn btn-warning btn-xs" href="@Url.Action("EditOption",new{id=option.ID})">
                                     <i class="glyphicon glyphicon-edit"></i>
                                 </a>
-                                <a class="btn btn-danger btn-xs">
+                                <a class="btn btn-danger btn-xs" onclick="DeleteOption(@option.ID)">
                                     <i class="glyphicon glyphicon-trash"></i>
                                 </a>
                             </li>

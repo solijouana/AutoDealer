@@ -38,6 +38,12 @@ namespace AutoDealer.Services.Impelementations
                 DeleteOption(option);
         }
 
+        public void DeleteHardOption(Option option)
+        {
+            _optionRepository.Delete(option);
+            _optionRepository.Save();
+        }
+
         public Option GetOptionById(int optionId)
         {
            return _optionRepository.GetById(optionId);

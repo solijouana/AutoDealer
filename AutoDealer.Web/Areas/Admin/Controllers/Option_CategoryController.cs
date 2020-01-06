@@ -134,6 +134,19 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
             return View(editedOption);
         }
 
+        public ActionResult DeleteOption(int id)
+        {
+            var option = unitOfWork.OptionServices.GetOptionById(id);
+
+            if (option != null)
+            {
+                unitOfWork.OptionServices.DeleteHardOption(option);
+
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }

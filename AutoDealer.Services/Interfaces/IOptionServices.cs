@@ -9,6 +9,7 @@ namespace AutoDealer.Services.Interfaces
         void EditOption(Option editedOption);
         void DeleteOption(Option option);
         void DeleteOption(int optionId);
+        void DeleteHardOption(Option option);
         Option GetOptionById(int optionId);
     }
 }
