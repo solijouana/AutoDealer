@@ -1,5 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
 using AutoDealer.Services.Interfaces;
@@ -14,6 +14,12 @@ namespace AutoDealer.Services.Impelementations
         {
             _carRepository = carRepository;
         }
+
+        public IEnumerable<Car> GetAllCars()
+        {
+            return _carRepository.Get(null).ToList();
+        }
+
         public void CreateCar(Car newCar)
         {
             _carRepository.Insert(newCar);

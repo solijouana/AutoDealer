@@ -11,3 +11,4 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.c
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.csproj.CoreCompileInputs.cache
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.dll
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Data\obj\Debug\AutoDealer.Data.pdb
+D:\Projects\AutoDealer\AutoDealer.Data\bin\Debug\AutoDealer.Data.dll.config
