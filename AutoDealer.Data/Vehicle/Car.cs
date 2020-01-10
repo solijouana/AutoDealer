@@ -63,6 +63,11 @@ namespace AutoDealer.Data.Vehicle
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public bool Specific { get; set; }
 
+        [Display(Name = "اطلاعات تماس")]
+        [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
+        [MaxLength(250)]
+        public string ContactNumber { get; set; }
+
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }
     }

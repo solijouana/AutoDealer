@@ -51,3 +51,4 @@ D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Mig
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddOptionEntityandoption_categoryentity.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.adddbsets.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.update.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddContactNuberinCarentity.resources

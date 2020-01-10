@@ -1,4 +1,5 @@
-﻿
+﻿@model AutoDealer.Data.Vehicle.Car
+
 @{
     ViewBag.Title = "Create";
 }
@@ -8,20 +9,10 @@
     <h1>ثبت آگهی</h1>
 
     <div class="sell_box sell_box_1">
-        <h2><strong>وسیله نقلیه</strong> داده ها</h2>
+        <h2>اطلاعات وسیله نقلیه</h2>
         <div class="select_wrapper">
             <label><span>* </span><strong>سازنده:</strong></label>
-            <select class="select_5">
-                <option value="0">انتخاب کنید</option>
-                <option value="1">آئودی</option>
-                <option value="2">مرسدس بنز</option>
-                <option value="3">بی ام و</option>
-                <option value="4">لکسوس</option>
-                <option value="5">لینکلن</option>
-                <option value="6">فورد</option>
-                <option value="7">فیات</option>
-                <option value="8">Dodge</option>
-            </select>
+            @Html.DropDownList("ManufacturersID", null, htmlAttributes:new{@class="form-control"})
         </div>
         <div class="select_wrapper">
             <label><span>* </span><strong>مدل: </strong></label>
