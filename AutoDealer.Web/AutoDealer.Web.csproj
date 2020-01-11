@@ -467,6 +467,7 @@
     <Content Include="Content\js\jquery.selectik.js" />
     <Content Include="Content\js\js.js" />
     <Content Include="Content\js\mobilyslider.js" />
+    <Content Include="Content\ReloadListJS\ModelList.js" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

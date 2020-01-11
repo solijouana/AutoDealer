@@ -43,7 +43,7 @@ namespace AutoDealer.Services.Impelementations
 
         public void DeleteModel(int modelId)
         {
-            var model =GetModelById(modelId);
+            var model = GetModelById(modelId);
             if (model != null)
             {
                 DeleteModel(model);
@@ -59,7 +59,7 @@ namespace AutoDealer.Services.Impelementations
         public void DeleteHardModel(int id)
         {
             var model = _modelRepository.GetById(id);
-            if (model!=null)
+            if (model != null)
                 DeleteHardModel(model);
         }
 
@@ -68,6 +68,14 @@ namespace AutoDealer.Services.Impelementations
             return _modelRepository.GetById(modelId);
 
         }
+
+        public IEnumerable<Model> GetListModelByManufacturerId(int id)
+        {
+            var model = _modelRepository.Get(m => m.ManufacturerId == id).ToList();
+
+            return model;
+        }
+
         public void Dispose()
         {
             _modelRepository?.Dispose();

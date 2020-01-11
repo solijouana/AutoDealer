@@ -15,6 +15,8 @@ namespace AutoDealer.Services.Interfaces
         void DeleteHardModel(Model model);
         void DeleteHardModel(int id);
         Model GetModelById(int modelId);
-        
+        IEnumerable<Model> GetListModelByManufacturerId(int id);
+
     }
 }
+        
