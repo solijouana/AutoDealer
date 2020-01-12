@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using AutoDealer.Data.BaseType;
 
 namespace AutoDealer.Data.Vehicle
@@ -12,11 +13,6 @@ namespace AutoDealer.Data.Vehicle
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [Display(Name = "سال ساخت")]
         public string ProductionDate { get; set; }
-
-        [Display(Name = "تیپ")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(150)]
-        public string Type { get; set; }
 
         [Display(Name = "نوع سوخت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -68,7 +64,13 @@ namespace AutoDealer.Data.Vehicle
         [MaxLength(250)]
         public string ContactNumber { get; set; }
 
+        [Display(Name = "وضعیت")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public bool IsActive { get; set; }
+
+        public virtual ICollection<Car_Selected_Option> CarSelectedOptions { get; set; }
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }
+        public virtual Model Model { get; set; }
     }
 }

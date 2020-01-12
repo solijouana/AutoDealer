@@ -94,6 +94,14 @@
     <Compile Include="Migrations\202001101013123_Add ContactNuber in Car entity.designer.cs">
       <DependentUpon>202001101013123_Add ContactNuber in Car entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001120651379_Add IsActive field in car table.cs" />
+    <Compile Include="Migrations\202001120651379_Add IsActive field in car table.designer.cs">
+      <DependentUpon>202001120651379_Add IsActive field in car table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001120749253_Create Car_Option Table.cs" />
+    <Compile Include="Migrations\202001120749253_Create Car_Option Table.designer.cs">
+      <DependentUpon>202001120749253_Create Car_Option Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001101013123_Add ContactNuber in Car entity.resx">
       <DependentUpon>202001101013123_Add ContactNuber in Car entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001120651379_Add IsActive field in car table.resx">
+      <DependentUpon>202001120651379_Add IsActive field in car table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001120749253_Create Car_Option Table.resx">
+      <DependentUpon>202001120749253_Create Car_Option Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

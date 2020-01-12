@@ -119,6 +119,21 @@ namespace AutoDealer.Web.UOW
             }
         }
 
+        private ICar_Selected_OptionServices _carSelectedOption;
+
+        public ICar_Selected_OptionServices Car_Selected_Option
+        {
+            get
+            {
+                if (_carSelectedOption == null)
+                {
+                    _carSelectedOption=new Car_Selected_OptionServices(new Repository<Car_Selected_Option>(_context));
+                }
+
+                return _carSelectedOption;
+            }
+        }
+
 
         public void Dispose()
         {

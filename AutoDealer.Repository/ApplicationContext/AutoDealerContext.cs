@@ -12,6 +12,7 @@ namespace AutoDealer.Repository.ApplicationContext
         public DbSet<SubModel> SubModels { get; set; }
         public DbSet<Option> Options { get; set; }
         public DbSet<Option_Category> Optotion_Categories { get; set; }
+        public DbSet<Car_Selected_Option> Car_Selected_Options { get; set; }
 
     }
 }

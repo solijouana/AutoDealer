@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using AutoDealer.Data.BaseType;
 
@@ -17,6 +18,9 @@ namespace AutoDealer.Data.Vehicle
 
         [ForeignKey("OptionCategory")]
         public int Op_CategoryID { get; set; }
+
+        public virtual ICollection<Car_Selected_Option> CarSelectedOptions { get; set; }
         public virtual Option_Category OptionCategory { get; set; }
+
     }
 }

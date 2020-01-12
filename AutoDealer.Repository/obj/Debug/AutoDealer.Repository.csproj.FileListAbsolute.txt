@@ -52,3 +52,7 @@ D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Mig
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.adddbsets.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.update.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddContactNuberinCarentity.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddContactNuberinCarentity.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddRealationwithinCarAndModel.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddIsActivefieldincartable.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.CreateCar_OptionTable.resources
