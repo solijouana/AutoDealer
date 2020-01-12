@@ -12,5 +12,6 @@ namespace AutoDealer.Services.Interfaces
         void DeleteSubModel(SubModel model);
         void DeleteSubModel(int id);
         SubModel GetSubModelById(int modelId);
+      
     }
 }

@@ -23,11 +23,21 @@ namespace AutoDealer.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult ReloadModelList(int stateid)    
+        public ActionResult ReloadModelList(int manufacturerId)    
         {
-            var model = unitOfWork.ModelServices.GetListModelByManufacturerId(stateid);
+            var model = unitOfWork.ModelServices.GetListModelByManufacturerId(manufacturerId);
             SelectList obgModeList = new SelectList(model, "ID", "ModelTitle", 0);
+
             return Json(obgModeList);
+        }
+
+        [HttpPost]
+        public ActionResult ReloadSubModelList(int modelId)
+        {
+            var subModel = unitOfWork.ModelServices.GetSubModelsListByModelId(modelId);
+            SelectList obgSubModelList=new SelectList(subModel,"ID","SubModelTitle",0);
+
+            return Json(obgSubModelList);
         }
     }
 }

@@ -47,6 +47,7 @@ namespace AutoDealer.Services.Impelementations
         {
            return _subRepository.GetById(modelId);
         }
+
         public void Dispose()
         {
             _subRepository?.Dispose();

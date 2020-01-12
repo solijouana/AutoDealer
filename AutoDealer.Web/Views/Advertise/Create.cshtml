@@ -2,88 +2,85 @@
 @model AutoDealer.Data.Vehicle.Car
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "ثبت آگهی";
 }
 
 <div class="main_wrapper">
 
     <h1>ثبت آگهی</h1>
 
-<div class="sell_box sell_box_1">
-    <h2>اطلاعات وسیله نقلیه</h2>
-    <div class="select_wrapper">
-        <label><span>* </span><strong>سازنده:</strong></label>
-        @Html.DropDownList("ManufacturersID", null, new { @id = "ddlmanufacture", @style = "width:200px;", @onchange = "javascript:GetCity(this.value);" })
-        @Html.ValidationMessageFor(m => m.ManufacturerId)
-    </div>
-    <div class="select_wrapper">
-        <label><span>* </span><strong>مدل: </strong></label>
-        <select id="ddlModel" name="@nameof(Model.Manufacturers.Models)" style="width: 200px"></select>
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>سال ساخت</strong></label>
-        @Html.TextBoxFor(m => m.ProductionDate, htmlAttributes: new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ProductionDate)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>تیپ</strong></label>
-        @Html.TextBoxFor(m => m.Type, htmlAttributes: new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Type)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>سوخت</strong></label>
-        @Html.TextBoxFor(m => m.Fuel, htmlAttributes: new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Fuel)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>جعبه دنده</strong></label>
-        @Html.TextBoxFor(m => m.Transmition, htmlAttributes: new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Transmition)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>درب</strong></label>
-        @Html.TextBoxFor(m => m.Doors, htmlAttributes: new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Doors)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>رنگ</strong></label>
-        @Html.TextBoxFor(m => m.Color, htmlAttributes: new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Color)
-    </div>
-    <div class="select_wrapper">
-        <label><span>*</span><strong>کیلومتر</strong></label>
-        @Html.TextBoxFor(m => m.Trip, htmlAttributes: new {@class = "form-control"})
-        @Html.ValidationMessageFor(m => m.Trip)
-    </div>
-    <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+    <div class="sell_box sell_box_1">
+        <h2>اطلاعات وسیله نقلیه</h2>
+        <div class="select_wrapper">
+            <label><span>* </span><strong>سازنده:</strong></label>
+            @Html.DropDownList("ManufacturersID", null, new { @id = "ddlmanufacture", @style = "width:200px;", @onchange = "javascript:GetModel(this.value);" })
+            @Html.ValidationMessageFor(m => m.ManufacturerId)
+        </div>
+        <div class="select_wrapper">
+            <label><span>* </span><strong>مدل: </strong></label>
+            <select id="ddlModel" name="@nameof(Model.Manufacturers.Models)" style="width: 200px" onchange="GetSubModel(this.value)"></select>
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>تیپ</strong></label>
+            <select id="ddlSubModel" name="@nameof(Model.Model.SubModels)" style="width: 200px"></select>
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>سال ساخت</strong></label>
+            @Html.TextBoxFor(m => m.ProductionDate, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ProductionDate)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>سوخت</strong></label>
+            @Html.TextBoxFor(m => m.Fuel, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Fuel)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>جعبه دنده</strong></label>
+            @Html.TextBoxFor(m => m.Transmition, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Transmition)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>درب</strong></label>
+            @Html.TextBoxFor(m => m.Doors, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Doors)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>رنگ</strong></label>
+            @Html.TextBoxFor(m => m.Color, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Color)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>کیلومتر</strong></label>
+            @Html.TextBoxFor(m => m.Trip, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Trip)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>قیمت</strong></label>
+            @Html.TextBoxFor(m => m.Price, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Price)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>تلفن تماس</strong></label>
+            @Html.TextBoxFor(m => m.ContactNumber, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ContactNumber)
+        </div>
+        <div class="select_wrapper">
+            <label><span>*</span><strong>توضیحات</strong></label>
+            @Html.TextAreaFor(m => m.Description, htmlAttributes: new { @class = "form-control",style="width:400px;height:200px" })
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+        <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
 
-    <div class="clear"></div>
-</div>
-@{
-    List<Option_Category> optionCategoriesList = ViewBag.Options as List<Option_Category>;
-}
+        <div class="clear"></div>
+    </div>
     <div class="sell_box sell_box_2">
-        <h2><strong>وسیله نقلیه</strong> تجهیزات</h2>
-        @foreach (var optionCategories in optionCategoriesList)
-        {
-            <div class="chb_group">
-                @foreach (var option in optionCategories.Options)
-                {
-                    <span class="custom_chb_wrapper">
-                        <span class="custom_chb">
-                            <input type="checkbox" name="" checked="checked"/>
-                        </span>
-                        <label>ABS</label>
-                    </span>
-                }
-              
-            </div>
-        }  
+        <h2>تجهیزات وسیله نقلیه</h2>
+
         <div class="clear"></div>
     </div>
     <!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
     <div class="sell_box sell_box_4">
-        <h2><strong>وسیله نقلیه</strong> عکس</h2>
+        <h2>عکس وسیله نقلیه</h2>
         <div class="foto_wrapper">
             <a href="#">
                 <img src="images/upload.png" alt="" class="upload" />

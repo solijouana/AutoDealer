@@ -76,6 +76,11 @@ namespace AutoDealer.Services.Impelementations
             return model;
         }
 
+        public IEnumerable<SubModel> GetSubModelsListByModelId(int modelId)
+        {
+            return _subModelRepository.Get(s => s.ModelID == modelId).ToList();
+        }
+
         public void Dispose()
         {
             _modelRepository?.Dispose();
