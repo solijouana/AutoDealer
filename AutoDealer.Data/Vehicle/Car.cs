@@ -8,7 +8,7 @@ namespace AutoDealer.Data.Vehicle
 {
     public class Car : BaseEntity
     {
-        public int ManufacturerId { get; set; }
+        public int ManufacturerId { get; set; }  
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [Display(Name = "سال ساخت")]

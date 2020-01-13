@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
+using AutoDealer.Data.Vehicle;
 using AutoDealer.Web.UOW;
 
 namespace AutoDealer.Web.Controllers
@@ -12,14 +14,28 @@ namespace AutoDealer.Web.Controllers
         {
             this.unitOfWork = unitOfWork;
         }
-
-
-        [Route("CreateAdv")]
+   
         public ActionResult Create()
         {
-            ViewBag.ManufacturersID = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
-            ViewBag.Options = unitOfWork.Option_CategoryServices.GetAllOption_Category();
+            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            ViewBag.Option_Category = unitOfWork.Option_CategoryServices.GetAllOption_Category();
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Car newCar, List<int> optionId)
+        {
+            if (ModelState.IsValid)
+            {
+                newCar.CreateTime=DateTime.Now;
+                newCar.Specific = false;
+                unitOfWork.CarServices.CreateCar(newCar);
+                return RedirectToRoute("/");
+            }
+            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            ViewBag.Option_Category = unitOfWork.Option_CategoryServices.GetAllOption_Category();
+            return View(newCar);
         }
 
         [HttpPost]
