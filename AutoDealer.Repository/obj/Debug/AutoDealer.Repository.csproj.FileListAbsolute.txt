@@ -58,3 +58,9 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.CreateCar_OptionTable.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.AddIsActivefieldincartable.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.CreateCar_OptionTable.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changerelationwithintables.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeconfigtables.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addrelwithinmanufacturerandmodel.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addmanufacturerId.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changerels.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addsubmodelcollection.resources

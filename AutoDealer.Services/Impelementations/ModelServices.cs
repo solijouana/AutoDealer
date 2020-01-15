@@ -71,7 +71,7 @@ namespace AutoDealer.Services.Impelementations
 
         public IEnumerable<Model> GetListModelByManufacturerId(int id)
         {
-            var model = _modelRepository.Get(m => m.ManufacturerId == id).ToList();
+            var model = _modelRepository.Get(m => m.ManufacturerID == id).ToList();
 
             return model;
         }

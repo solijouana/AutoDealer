@@ -13,9 +13,8 @@ namespace AutoDealer.Data.Vehicle
 
         [Display(Name = "حذف")]
         public bool IsDelete { get; set; }
-
-        public virtual ICollection<Model> Models { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<Model>Models { get; set; }
 
     }
 }

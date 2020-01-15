@@ -102,6 +102,30 @@
     <Compile Include="Migrations\202001120749253_Create Car_Option Table.designer.cs">
       <DependentUpon>202001120749253_Create Car_Option Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001150829282_change relation within tables.cs" />
+    <Compile Include="Migrations\202001150829282_change relation within tables.designer.cs">
+      <DependentUpon>202001150829282_change relation within tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001150842277_change config tables.cs" />
+    <Compile Include="Migrations\202001150842277_change config tables.designer.cs">
+      <DependentUpon>202001150842277_change config tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001150914321_add rel within manufacturer and model.cs" />
+    <Compile Include="Migrations\202001150914321_add rel within manufacturer and model.designer.cs">
+      <DependentUpon>202001150914321_add rel within manufacturer and model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001150918206_add manufacturerId.cs" />
+    <Compile Include="Migrations\202001150918206_add manufacturerId.designer.cs">
+      <DependentUpon>202001150918206_add manufacturerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001150932319_change rels.cs" />
+    <Compile Include="Migrations\202001150932319_change rels.designer.cs">
+      <DependentUpon>202001150932319_change rels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001150937353_add submodel collection.cs" />
+    <Compile Include="Migrations\202001150937353_add submodel collection.designer.cs">
+      <DependentUpon>202001150937353_add submodel collection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +175,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001120749253_Create Car_Option Table.resx">
       <DependentUpon>202001120749253_Create Car_Option Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150829282_change relation within tables.resx">
+      <DependentUpon>202001150829282_change relation within tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150842277_change config tables.resx">
+      <DependentUpon>202001150842277_change config tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150914321_add rel within manufacturer and model.resx">
+      <DependentUpon>202001150914321_add rel within manufacturer and model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150918206_add manufacturerId.resx">
+      <DependentUpon>202001150918206_add manufacturerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150932319_change rels.resx">
+      <DependentUpon>202001150932319_change rels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001150937353_add submodel collection.resx">
+      <DependentUpon>202001150937353_add submodel collection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
