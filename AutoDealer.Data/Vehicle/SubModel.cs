@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using AutoDealer.Data.BaseType;
 
 namespace AutoDealer.Data.Vehicle
@@ -12,5 +13,6 @@ namespace AutoDealer.Data.Vehicle
         [MaxLength(150)]
         public string SubModelTitle { get; set; }
         public virtual Model Model { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

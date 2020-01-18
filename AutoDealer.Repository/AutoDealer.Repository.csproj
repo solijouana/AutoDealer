@@ -126,6 +126,10 @@
     <Compile Include="Migrations\202001150937353_add submodel collection.designer.cs">
       <DependentUpon>202001150937353_add submodel collection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001181321357_change Relation within Car and SubModel.cs" />
+    <Compile Include="Migrations\202001181321357_change Relation within Car and SubModel.designer.cs">
+      <DependentUpon>202001181321357_change Relation within Car and SubModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001150937353_add submodel collection.resx">
       <DependentUpon>202001150937353_add submodel collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001181321357_change Relation within Car and SubModel.resx">
+      <DependentUpon>202001181321357_change Relation within Car and SubModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

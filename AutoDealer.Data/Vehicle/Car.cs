@@ -9,7 +9,10 @@ namespace AutoDealer.Data.Vehicle
     public class Car : BaseEntity
     {
         public int ManufacturerId { get; set; }
-        public int ModelId { get; set; }    
+        public int ModelId { get; set; }
+
+        [ForeignKey("SubModel")]
+        public int SubModelId { get; set; } 
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [Display(Name = "سال ساخت")]
@@ -71,5 +74,6 @@ namespace AutoDealer.Data.Vehicle
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }
         public virtual Model Model { get; set; }
+        public virtual SubModel SubModel { get; set; }
     }
 }

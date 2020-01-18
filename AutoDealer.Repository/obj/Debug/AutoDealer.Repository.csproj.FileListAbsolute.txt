@@ -64,3 +64,4 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addmanufacturerId.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changerels.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addsubmodelcollection.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeRelationwithinCarandSubModel.resources

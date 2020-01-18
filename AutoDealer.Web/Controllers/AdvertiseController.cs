@@ -24,7 +24,7 @@ namespace AutoDealer.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Car newCar, List<int> optionId,int subModel)
+        public ActionResult Create(Car newCar, List<int> optionId)
         {
             if (ModelState.IsValid)
             {
