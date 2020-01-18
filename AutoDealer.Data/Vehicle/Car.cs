@@ -57,7 +57,6 @@ namespace AutoDealer.Data.Vehicle
         public bool IsDelete { get; set; }
 
         [Display(Name = "آگهی ویژه")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public bool Specific { get; set; }
 
         [Display(Name = "اطلاعات تماس")]
@@ -66,7 +65,6 @@ namespace AutoDealer.Data.Vehicle
         public string ContactNumber { get; set; }
 
         [Display(Name = "وضعیت")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public bool IsActive { get; set; }
 
         public virtual ICollection<Car_Selected_Option> CarSelectedOptions { get; set; }

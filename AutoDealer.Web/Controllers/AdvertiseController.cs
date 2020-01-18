@@ -24,12 +24,13 @@ namespace AutoDealer.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Car newCar, List<int> optionId)
+        public ActionResult Create(Car newCar, List<int> optionId,int subModel)
         {
             if (ModelState.IsValid)
             {
                 newCar.CreateTime=DateTime.Now;
                 newCar.Specific = false;
+                unitOfWork.Car_Selected_Option.InsertSelectedOptions(optionId,newCar.ID);
                 unitOfWork.CarServices.CreateCar(newCar);
                 return RedirectToRoute("/");
             }

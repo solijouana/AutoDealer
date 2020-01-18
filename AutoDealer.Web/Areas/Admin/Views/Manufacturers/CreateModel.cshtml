@@ -8,7 +8,7 @@
 @using (Html.BeginForm("CreateModel","Manufacturers",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(m=>m.ManufacturerId)
+    @Html.HiddenFor(m=>m.ManufacturerID)
     
     <div class="form-horizontal">
         <h4>مدل جدید</h4>

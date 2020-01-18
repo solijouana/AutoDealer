@@ -24,11 +24,11 @@
             </div>
             <div class="select_wrapper">
                 <label><span>* </span><strong>مدل: </strong></label>
-                <select id="ddlModel" name="@nameof(Model)" style="width: 200px" onchange="GetSubModel(this.value)"></select>
+                <select id="ddlModel" name="@nameof(Model.ModelId)" style="width: 200px" onchange="GetSubModel(this.value)"></select>
             </div>
             <div class="select_wrapper">
                 <label><span>*</span><strong>تیپ</strong></label>
-                <select id="ddlSubModel" name="@nameof(Model.Model.SubModels)" style="width: 200px"></select>
+                <select id="ddlSubModel" name="subModel" style="width: 200px"></select>
             </div>
             <div class="select_wrapper">
                 <label><span>*</span><strong>سال ساخت</strong></label>
@@ -93,7 +93,7 @@
                             {
                                 <span class="custom_chb_wrapper">
                                     <span class="custom_chb">
-                                        <input type="checkbox" name="optionId" />
+                                        <input type="checkbox" name="optionId" value="@optionCategoryOption.ID" />
                                     </span>
                                     <label>@optionCategoryOption.OptionTitle</label>
                                 </span>

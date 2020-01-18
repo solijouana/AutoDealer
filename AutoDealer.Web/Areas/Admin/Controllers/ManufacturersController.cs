@@ -95,26 +95,26 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
 
         #region Model
 
-        //public ActionResult CreateModel(int? manufacturerId)
-        //{
-        //    return View(new Model()
-        //    {
-        //        ManufacturerId = manufacturerId.Value
-        //    });
-        //}
+        public ActionResult CreateModel(int? manufacturerId)
+        {
+            return View(new Model()
+            {
+                ManufacturerID = manufacturerId.Value
+            });
+        }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult CreateModel(Model model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        unitOfWork.ModelServices.CreateModel(model);
-        //        return RedirectToAction("Index");
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateModel(Model model)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.ModelServices.CreateModel(model);
+                return RedirectToAction("Index");
+            }
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
 
         public ActionResult EditModel(int id)
         {

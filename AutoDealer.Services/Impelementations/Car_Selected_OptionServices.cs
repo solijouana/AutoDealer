@@ -20,34 +20,23 @@ namespace AutoDealer.Services.Impelementations
             return _carOptionRepository.Get(null).ToList();
         }
 
-        public void CreateCarOption(Car_Selected_Option newCarOption)
+        public void InsertSelectedOptions(List<int> carSelectedOptions, int carId)
         {
-            _carOptionRepository.Insert(newCarOption);
-            _carOptionRepository.Save();
+            if (carSelectedOptions != null && carSelectedOptions.Any())
+            {
+                foreach (var carSelectedOption in carSelectedOptions)
+                {
+                    _carOptionRepository.Insert(new Car_Selected_Option()
+                    {
+                        CarID = carId,
+                        OptionID = carSelectedOption
+                    });
+                }
+
+                _carOptionRepository.Save();
+            }
         }
 
-        public void EditCarOption(Car_Selected_Option editedCarOption)
-        {
-            _carOptionRepository.Update(editedCarOption);
-            _carOptionRepository.Save();
-        }
-
-        public void DeleteCarOption(Car_Selected_Option carOption)
-        {
-            _carOptionRepository.Delete(carOption);
-            _carOptionRepository.Save();
-        }
-
-        public void DeleteCarOption(int carOptionId)
-        {
-            _carOptionRepository.Delete(carOptionId);
-            _carOptionRepository.Save();
-        }
-
-        public Car_Selected_Option GetCarOptionById(int carOptionId)
-        {
-            return _carOptionRepository.GetById(carOptionId);
-        }
         public void Dispose()
         {
             _carOptionRepository?.Dispose();
