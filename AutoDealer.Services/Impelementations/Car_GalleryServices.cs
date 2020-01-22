@@ -1,5 +1,5 @@
-﻿using System.Reflection.Emit;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
 using AutoDealer.Services.Interfaces;
@@ -14,10 +14,31 @@ namespace AutoDealer.Services.Impelementations
         {
             _carRepository = carRepository;
         }
-       public void CreateCar_Gallery(Car_Gallery newCar_Gallery)
+
+        public IEnumerable<Car_Gallery> CarGalleries()
+        {
+            return _carRepository.Get(null).ToList();
+        }
+
+        public void CreateCar_Gallery(Car_Gallery newCar_Gallery)
         {
             _carRepository.Insert(newCar_Gallery);
             _carRepository.Save();
+        }
+
+        public void InsertMultiImage(List<string> carGalleries,int carId)
+        {
+            if (carGalleries != null && carGalleries.Any())
+            {
+                foreach (var carGallery in carGalleries)
+                {
+                    _carRepository.Insert(new Car_Gallery()
+                    {
+                        CarId = carId,
+                        ImageName = carGallery
+                    });
+                }
+            }
         }
 
         public void EditCar_Gallery(Car_Gallery editedCar_Gallery)

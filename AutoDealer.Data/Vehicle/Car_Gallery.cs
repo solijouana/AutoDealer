@@ -7,9 +7,6 @@ namespace AutoDealer.Data.Vehicle
     {
         public int CarId { get; set; }
 
-        [Display(Name = "نام تصویر")]
-        public string ImageTitle { get; set; }
-
         [Required]
         public string ImageName { get; set; }
 

@@ -130,6 +130,10 @@
     <Compile Include="Migrations\202001181321357_change Relation within Car and SubModel.designer.cs">
       <DependentUpon>202001181321357_change Relation within Car and SubModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001211112479_Remove ImageTile from Car_Gallery.cs" />
+    <Compile Include="Migrations\202001211112479_Remove ImageTile from Car_Gallery.designer.cs">
+      <DependentUpon>202001211112479_Remove ImageTile from Car_Gallery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001181321357_change Relation within Car and SubModel.resx">
       <DependentUpon>202001181321357_change Relation within Car and SubModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001211112479_Remove ImageTile from Car_Gallery.resx">
+      <DependentUpon>202001211112479_Remove ImageTile from Car_Gallery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

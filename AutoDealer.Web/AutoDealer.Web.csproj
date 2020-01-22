@@ -810,6 +810,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Images\Cars\Thumb\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
