@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\CarJS\Car.js" />
     <Content Include="Areas\Admin\Content\css\4095-rtl.css" />
     <Content Include="Areas\Admin\Content\css\4095-rtl.min.css" />
     <Content Include="Areas\Admin\Content\css\4095.css" />
@@ -753,6 +754,7 @@
     <Content Include="Areas\Admin\Views\Option_Category\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Option_Category\CreateOption.cshtml" />
     <Content Include="Areas\Admin\Views\Option_Category\EditOption.cshtml" />
+    <Content Include="Areas\Admin\Views\Advertise\ListAdvertise.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -769,6 +771,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdvertiseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManufacturersController.cs" />
     <Compile Include="Areas\Admin\Controllers\Option_CategoryController.cs" />

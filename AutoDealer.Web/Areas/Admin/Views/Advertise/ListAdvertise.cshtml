@@ -1,0 +1,138 @@
+﻿@model AutoDealer.Services.DTO.Advertise.AdminAdvertiseDto
+
+@{
+    ViewBag.Title = "لیست آگهی";
+    int count = 1;    
+}
+
+<h2>لیست آگهی ها</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="col-lg-12">
+            <div class="widget flat radius-bordered">
+                <div class="widget-header bg-blue">
+                    <span class="widget-caption">فیلتر آگهی</span>
+                </div>
+                <div class="widget-body">
+                    <div id="registration-form">
+                        @using (Html.BeginForm("ListAdvertise", "Advertise", FormMethod.Get, new { id = "filter-search" }))
+                        {
+                            <input type="hidden" value="@Model.PageId" name="@nameof(Model.PageId)" id="PageId" />
+                            <div class="form-group">
+                                <label>نام سازنده یا مدل</label>
+                                <input type="text" name="@nameof(Model.FilterName)" value="@Model.FilterName" class="form-control" placeholder="جستجو" />
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">جستجو</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="well with-header  with-footer">
+            <div class="header bg-blue">
+                لیست آگهی ها
+            </div>
+            <table class="table table-hover">
+                <thead class="bordered-darkorange">
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        سازنده
+                    </th>
+                    <th>
+                        مدل
+                    </th>
+                    <th>
+                        زیر مدل
+                    </th>
+                    <th>
+                        تاریخ ثبت
+                    </th>
+                    <th>
+                        نوع آگهی
+                    </th>
+                    <th>
+                        وضعیت
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var car in Model.Cars)
+                {
+
+                    <tr>
+                        <td>
+                            @(count++)
+                        </td>
+                        <td>
+                            @car.Manufacturers.ManufacturerName
+                        </td>
+                        <td>
+                            @car.Model.ModelTitle
+                        </td>
+                        <td>
+                            @car.SubModel.SubModelTitle
+                        </td>
+                        <td>
+                            @car.CreateTime
+                        </td>
+                        <td>
+                            @(car.Specific?"ویژه":"عادی")
+                        </td>
+                        <td>
+                            <p>@(car.IsActive ? "فعال" : "غیرفعال")</p>
+
+                            @if (car.IsDelete)
+                            {
+                                <p class="text-danger">حذف شده</p>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-warning btn-circle btn-xs" href="@Url.Action("Edit", new {id = car.ID})">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            @if (car.IsDelete)
+                            {
+                                <a class="btn btn-primary btn-circle btn-xs" onclick="ReturnUser(@car.ID)">
+                                    <i class="glyphicon glyphicon-repeat"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger btn-circle btn-xs" onclick="DeleteUser(@car.ID)">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <hr />
+            <ul class="pagination">
+                @*<li class="disabled"><a href="#">«</a></li>*@
+                @for (int i = Model.StartPage; i <= Model.EndPage; i++)
+                {
+                    <li class="@(i == Model.ActivePage?"active":"")">
+                        <a style="cursor: pointer" onclick="Paging(@i)">
+                            @i
+                            @if (i == Model.ActivePage)
+                            {
+                                <span class="sr-only">(current)</span>
+                            }
+                        </a>
+                    </li>
+                }
+                @*<li><a href="#">»</a></li>*@
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="~/Areas/Admin/Content/CarJS/Car.js"></script>

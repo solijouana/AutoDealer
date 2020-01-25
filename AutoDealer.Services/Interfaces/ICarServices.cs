@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoDealer.Data.Vehicle;
+using AutoDealer.Services.DTO.Advertise;
 
 namespace AutoDealer.Services.Interfaces
 {
@@ -12,5 +13,6 @@ namespace AutoDealer.Services.Interfaces
         void DeleteCar(Car car);
         void DeleteCar(int carId);
         Car GetCarById(int carId);
+        AdminAdvertiseDto GetCarsByFilter(AdminAdvertiseDto filter);
     }
 }

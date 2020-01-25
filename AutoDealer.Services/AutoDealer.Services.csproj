@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Advertise\AdminAdvertiseDto.cs" />
+    <Compile Include="DTO\Paging\BasePaging.cs" />
+    <Compile Include="DTO\Paging\Pager.cs" />
+    <Compile Include="Extensions\FilterExtensions.cs" />
+    <Compile Include="Extensions\PagingExtension.cs" />
     <Compile Include="Impelementations\CarServices.cs" />
     <Compile Include="Impelementations\Car_GalleryServices.cs" />
     <Compile Include="Impelementations\Car_Selected_OptionServices.cs" />

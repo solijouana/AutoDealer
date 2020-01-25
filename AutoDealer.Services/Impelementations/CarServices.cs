@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
+using AutoDealer.Services.DTO.Advertise;
+using AutoDealer.Services.DTO.Paging;
+using AutoDealer.Services.Extensions;
 using AutoDealer.Services.Interfaces;
 
 namespace AutoDealer.Services.Impelementations
@@ -47,6 +51,16 @@ namespace AutoDealer.Services.Impelementations
         public Car GetCarById(int carId)
         {
             return _carRepository.GetById(carId);
+        }
+
+        public AdminAdvertiseDto GetCarsByFilter(AdminAdvertiseDto filter)
+        {
+            var query = _carRepository.Get(null).AsQueryable().SetCarsFilter(filter);
+            var count = (int) Math.Ceiling(query.Count() / (double) filter.TakeEntity);
+            var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
+            var cars = query.OrderByDescending(q => q.ID).Paging(pager).ToList();
+
+            return filter.SetCars(cars).SetPaggingItem(pager);
         }
 
         public void Dispose()

@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Convertors\ImageResizer.cs" />
     <Compile Include="Convertors\RazorConvertors.cs" />
+    <Compile Include="FileTools\FilePath.cs" />
     <Compile Include="ImageTools\Add_RemoveImgae.cs" />
     <Compile Include="ImageTools\ImagePath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
