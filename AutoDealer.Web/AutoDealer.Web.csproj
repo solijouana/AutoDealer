@@ -159,6 +159,7 @@
     <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Areas\Admin\Content\fonts\typicons.svg" />
     <Content Include="Areas\Admin\Content\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Areas\Admin\Content\HomeJS\LoadList.js" />
     <Content Include="Areas\Admin\Content\img\angle-down.png" />
     <Content Include="Areas\Admin\Content\img\app-45616.png" />
     <Content Include="Areas\Admin\Content\img\app.png" />

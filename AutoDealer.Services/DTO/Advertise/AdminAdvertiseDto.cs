@@ -7,7 +7,7 @@ namespace AutoDealer.Services.DTO.Advertise
     public class AdminAdvertiseDto : BasePaging
     {
         public string FilterName { get; set; }
-        public List<Car> Cars { get; set; }
+        public List<Car> Cars =new List<Car>();
 
         public AdminAdvertiseDto SetPaggingItem(BasePaging paging)
         {

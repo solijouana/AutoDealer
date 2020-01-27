@@ -13,12 +13,19 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
             this.unitOfWork = unitOfWork;
         }
 
-        public ActionResult ListAdvertise(AdminAdvertiseDto filter)
+        public ActionResult ListAdvertise(AdminAdvertiseDto filter,int? takeEntity)
         {
-            filter.TakeEntity = 10;
+            if (takeEntity==null||takeEntity == 0)
+            {
+                filter.TakeEntity = 1;
+            }
+            else
+            {
+                filter.TakeEntity = (int)takeEntity;
+            }
             var car = unitOfWork.CarServices.GetCarsByFilter(filter);
 
-            return View(car);
+            return PartialView(car);
         }
     }
 }
