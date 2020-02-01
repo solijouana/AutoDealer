@@ -15,10 +15,10 @@
                 </div>
                 <div class="widget-body">
                     <div id="registration-form">
-                        @using (Ajax.BeginForm("ListAdvertise","Advertise",FormMethod.Get,new AjaxOptions()
+                        @using (Ajax.BeginForm("ListAdvertise", "Advertise", FormMethod.Get, new AjaxOptions()
                         {
                             UpdateTargetId = "list"
-                        },new{ id= "filter-search"}))
+                        }, new { id = "filter-search" }))
                         {
                             <input type="hidden" value="@Model.PageId" name="@nameof(Model.PageId)" id="PageId" />
                             <input type="hidden" value="@Model.TakeEntity" name="@nameof(Model.TakeEntity)" id="TakeEntity" />
@@ -41,81 +41,104 @@
             </div>
             <table class="table table-hover">
                 <thead class="bordered-darkorange">
-                <tr>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        سازنده
-                    </th>
-                    <th>
-                        مدل
-                    </th>
-                    <th>
-                        زیر مدل
-                    </th>
-                    <th>
-                        تاریخ ثبت
-                    </th>
-                    <th>
-                        نوع آگهی
-                    </th>
-                    <th>
-                        وضعیت
-                    </th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            سازنده
+                        </th>
+                        <th>
+                            مدل
+                        </th>
+                        <th>
+                            زیر مدل
+                        </th>
+                        <th>
+                            تاریخ ثبت
+                        </th>
+                        <th>
+                            نوع آگهی
+                        </th>
+                        <th>
+                            وضعیت
+                        </th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                @foreach (var car in Model.Cars)
-                {
+                    @foreach (var car in Model.Cars)
+                    {
 
-                    <tr>
-                        <td>
-                            @(count++)
-                        </td>
-                        <td>
-                            @car.Manufacturers.ManufacturerName
-                        </td>
-                        <td>
-                            @car.Model.ModelTitle
-                        </td>
-                        <td>
-                            @car.SubModel.SubModelTitle
-                        </td>
-                        <td>
-                            @car.CreateTime
-                        </td>
-                        <td>
-                            @(car.Specific ? "ویژه" : "عادی")
-                        </td>
-                        <td>
-                            <p>@(car.IsActive ? "فعال" : "غیرفعال")</p>
+                        <tr>
+                            <td>
+                                @(count++)
+                            </td>
+                            <td>
+                                @car.Manufacturers.ManufacturerName
+                            </td>
+                            <td>
+                                @car.Model.ModelTitle
+                            </td>
+                            <td>
+                                @car.SubModel.SubModelTitle
+                            </td>
+                            <td>
+                                @car.CreateTime
+                            </td>
+                            <td>
+                                @(car.Specific ? "ویژه" : "عادی")
+                            </td>
+                            <td>
+                                <p>@(car.IsActive ? "فعال" : "غیرفعال")</p>
 
-                            @if (car.IsDelete)
-                            {
-                                <p class="text-dager">حذف شده</p>
-                            }
-                        </td>
-                        <td>
-                            <a class="btn btn-warning btn-circle btn-xs" href="@Url.Action("Edit", new {id = car.ID})">
-                                <i class="glyphicon glyphicon-edit"></i>
-                            </a>
-                            @if (car.IsDelete)
-                            {
-                                <a class="btn btn-primary btn-circle btn-xs" onclick="ReturnUser(@car.ID)">
-                                    <i class="glyphicon glyphicon-repeat"></i>
-                                </a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-danger btn-circle btn-xs" onclick="DeleteUser(@car.ID)">
-                                    <i class="glyphicon glyphicon-trash"></i>
-                                </a>
-                            }
-                        </td>
-                    </tr>
-                }
+                                @if (car.IsDelete)
+                                {
+                                    <p class="text-dager">حذف شده</p>
+                                }
+                            </td>
+
+                            <td>
+                                @if (car.Specific)
+                                {
+                                    <a class="btn btn-info btn-circle btn-xs" onclick="ReturnSpecific(@car.ID)">
+                                        <i class="glyphicon glyphicon-apple"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-info btn-circle btn-xs" onclick="Specific(@car.ID)">
+                                        <i class="glyphicon glyphicon-barcode"></i>
+                                    </a>
+                                }
+                                @if (car.IsActive)
+                                {
+                                    <a class="btn btn-warning btn-circle btn-xs" onclick="DeActiveAdv(@car.ID)">
+                                        <i class="glyphicon glyphicon-eject"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-warning btn-circle btn-xs" onclick="ActiveAdv(@car.ID)">
+                                        <i class="glyphicon glyphicon-adjust"></i>
+                                    </a>
+                                }
+
+                                @if (car.IsDelete)
+                                {
+                                    <a class="btn btn-primary btn-circle btn-xs" onclick="ReturnAdv(@car.ID)">
+                                        <i class="glyphicon glyphicon-repeat"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-danger btn-circle btn-xs" onclick="DeleteAdv(@car.ID)">
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                }
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <hr />

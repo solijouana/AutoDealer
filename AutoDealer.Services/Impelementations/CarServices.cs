@@ -38,6 +38,7 @@ namespace AutoDealer.Services.Impelementations
 
         public void DeleteCar(Car car)
         {
+            car.IsDelete = true;
             EditCar(car);
         }
 

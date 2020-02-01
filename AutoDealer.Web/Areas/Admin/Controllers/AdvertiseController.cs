@@ -27,5 +27,82 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
 
             return PartialView(car);
         }
+
+        public ActionResult DeleteAdv(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                unitOfWork.CarServices.DeleteCar(car);
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ReturnAdv(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.IsDelete = false;
+                unitOfWork.CarServices.EditCar(car);
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ActiveAdv(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.IsActive = true;
+                unitOfWork.CarServices.EditCar(car);
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DeActiveAdv(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.IsActive = false;
+                unitOfWork.CarServices.EditCar(car);
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Specific(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.Specific = true;
+                unitOfWork.CarServices.EditCar(car);
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ReturnSpecific(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.Specific = false;
+                unitOfWork.CarServices.EditCar(car);
+                return Json(new { status = "Done" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
