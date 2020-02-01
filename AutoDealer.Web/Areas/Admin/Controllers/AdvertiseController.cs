@@ -17,7 +17,7 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
         {
             if (takeEntity==null||takeEntity == 0)
             {
-                filter.TakeEntity = 1;
+                filter.TakeEntity = 10;
             }
             else
             {

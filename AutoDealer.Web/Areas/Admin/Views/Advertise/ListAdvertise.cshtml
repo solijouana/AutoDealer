@@ -21,6 +21,7 @@
                         },new{ id= "filter-search"}))
                         {
                             <input type="hidden" value="@Model.PageId" name="@nameof(Model.PageId)" id="PageId" />
+                            <input type="hidden" value="@Model.TakeEntity" name="@nameof(Model.TakeEntity)" id="TakeEntity" />
                             <div class="form-group">
                                 <label>ایمیل کاربر</label>
                                 <input type="text" name="@nameof(Model.FilterName)" value="@Model.FilterName" class="form-control" placeholder="جستجو" />
