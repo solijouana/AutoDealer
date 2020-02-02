@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
@@ -65,6 +66,18 @@ namespace AutoDealer.Services.Impelementations
         public Car_Gallery GetCar_GalleryById(int car_GalleryId)
         {
             return _carRepository.GetById(car_GalleryId);
+        }
+
+        public List<Car_Gallery> GetCarGalleriesByCarsFilter(List<Car> cars)
+        {
+            List<Car_Gallery>Images=new List<Car_Gallery>();
+            foreach (var car in cars)
+            {
+                var images = _carRepository.Get(g => g.CarId == car.ID).OrderByDescending(g => g.ID).Take(1).ToList();
+                Images.AddRange(images);
+            }
+
+            return Images;
         }
 
         public void Dispose()

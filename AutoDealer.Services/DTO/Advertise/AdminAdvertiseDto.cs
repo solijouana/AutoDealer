@@ -28,5 +28,6 @@ namespace AutoDealer.Services.DTO.Advertise
 
             return this;
         }
+
     }
 }

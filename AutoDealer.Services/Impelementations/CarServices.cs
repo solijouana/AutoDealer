@@ -57,7 +57,7 @@ namespace AutoDealer.Services.Impelementations
         public AdminAdvertiseDto GetCarsByFilter(AdminAdvertiseDto filter)
         {
             var query = _carRepository.Get(null).AsQueryable().SetCarsFilter(filter);
-            var count = (int) Math.Ceiling(query.Count() / (double) filter.TakeEntity);
+            var count = (int)Math.Ceiling(query.Count() / (double)filter.TakeEntity);
             var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
             var cars = query.OrderByDescending(q => q.ID).Paging(pager).ToList();
 

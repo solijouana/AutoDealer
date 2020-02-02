@@ -24,6 +24,7 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
                 filter.TakeEntity = (int)takeEntity;
             }
             var car = unitOfWork.CarServices.GetCarsByFilter(filter);
+            ViewBag.Images = unitOfWork.Car_GalleryServices.GetCarGalleriesByCarsFilter(car.Cars);
 
             return PartialView(car);
         }

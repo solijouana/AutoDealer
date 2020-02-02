@@ -1,4 +1,6 @@
-﻿@model AutoDealer.Services.DTO.Advertise.AdminAdvertiseDto
+﻿@using AutoDealer
+@using AutoDealer.Data.Vehicle
+@model AutoDealer.Services.DTO.Advertise.AdminAdvertiseDto
 
 @{
     int count = 1;
@@ -39,11 +41,17 @@
                 لیست آگهی ها
                 <input type="number" id="takeEntity" onchange="changeEntity(this.value)" />
             </div>
+            @{
+                List<Car_Gallery> CarGalleries = ViewBag.Images as List<Car_Gallery>;
+            }
             <table class="table table-hover">
                 <thead class="bordered-darkorange">
                     <tr>
                         <th>
                             #
+                        </th>
+                        <th>
+                            تصویر
                         </th>
                         <th>
                             سازنده
@@ -73,6 +81,16 @@
                         <tr>
                             <td>
                                 @(count++)
+                            </td>
+                            <td>
+                                @if (CarGalleries.Any())
+                                {
+                                    foreach (var carGallery in CarGalleries.Where(g => g.CarId == car.ID))
+                                    {
+                                        <img class="thumb" src="@(ImagePath.ThumbImagePath+carGallery.ImageName)" width="90" height="80" />
+                                    }
+                                }
+
                             </td>
                             <td>
                                 @car.Manufacturers.ManufacturerName
