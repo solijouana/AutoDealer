@@ -1,89 +1,23 @@
-﻿<div class="recent" dir=ltr>
+﻿@using AutoDealer
+@model IEnumerable<AutoDealer.Data.Vehicle.Car>
+
+<div class="recent" dir=ltr>
     <h2><strong>اخیر</strong> لیست</h2>
-    <div class="recent_carousel">
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
+    @if (Model!=null&&Model.Any())
+    {
+        <div class="recent_carousel">
+            @foreach (var item in Model)
+            {
+                <div class="slide">
+                    <a href="/Car/@item.Manufacturers.ID/@item.ModelId">
+                        <img src="" alt=""/>
+                        <div class="description">@item.ProductionDate<br/>@item.Fuel<br/>@item.SubModel.SubModelTitle<br/>@item.Model.ModelTitle<br/>@item.Trip</div>
+                        <div class="title">@item.Manufacturers.ManufacturerName<span class="price">@item.Price</span></div>
+                    </a>
+                </div>
+            }
+            
         </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز<span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز<span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-        <div class="slide">
-            <a href="#">
-                <img src="/Content/images/placeholders/220x164.gif" alt="" />
-                <div class="description">ثبت نام 2010<br />3.0 Diesel<br />230 HP<br />Body Coupe<br />80 000 مایل</div>
-                <div class="title">مرسدس بنز <span class="price">$ 115 265</span></div>
-            </a>
-        </div>
-    </div>
+    }
+
 </div>

@@ -22,7 +22,7 @@ namespace AutoDealer.Web.UOW
             {
                 if (_carServices == null)
                 {
-                    _carServices = new CarServices(new Repository<Car>(_context));
+                    _carServices = new CarServices(new Repository<Car>(_context),new Repository<Manufacturer>(_context));
                 }
 
                 return _carServices;

@@ -18,6 +18,18 @@ namespace AutoDealer.Services.Extensions
             return queryable;
         }
 
+        public static IQueryable<Car> SetCatalogCarsFilter(this IQueryable<Car> queryable, AdvertiseCatalogDto filter)
+        {
+            if (!string.IsNullOrEmpty(filter.Filter))
+            {
+                queryable = queryable.Where(c =>
+                    c.Manufacturers.ManufacturerName.Contains(filter.Filter) ||
+                    c.Model.ModelTitle.Contains(filter.Filter));
+            }
+
+            return queryable;
+        }
+
         #endregion
     }
 }

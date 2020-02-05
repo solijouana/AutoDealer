@@ -1,9 +1,16 @@
 ﻿using System.Web.Mvc;
+using AutoDealer.Web.UOW;
 
 namespace AutoDealer.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IUnitOfWork unitOfWork;
+
+        public HomeController(IUnitOfWork unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
+        }
         public ActionResult Index()
         {
             return View();
@@ -21,7 +28,7 @@ namespace AutoDealer.Web.Controllers
 
         public ActionResult LastCars()
         {
-            return PartialView();
+            return PartialView(unitOfWork.CarServices.GetLastCars());
         }
 
         public ActionResult Banner()

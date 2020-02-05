@@ -1,0 +1,89 @@
+﻿@using AutoDealer
+@model AutoDealer.Services.DTO.Advertise.AdvertiseCatalogDto
+
+<div class="top_catalog_box">
+    <div class="switch">
+        <span class="table_view"></span>
+        <a href="#" class="list_view"></a>
+    </div>
+    <div class="sorting drop_list">
+        <strong>مرتب سازی بر اساس: </strong>
+        <div class="selected">
+            <span><a href="#">تاریخ</a></span>
+            <ul>
+                <li><a href="#">تاریخ</a></li>
+                <li><a href="#">قیمت</a></li>
+                <li><a href="#">نام</a></li>
+                <li><a href="#">سازنده</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="view_on_page drop_list">
+        <strong>نمایش در صفحه:</strong>
+        <div class="selected">
+            <span><a href="#">10</a></span>
+            <ul>
+                <li><a href="#">10</a></li>
+                <li><a href="#">20</a></li>
+                <li><a href="#">50</a></li>
+                <li><a href="#">100</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="pagination">
+        <ul>
+            @for (var i = @Model.StartPage; i <= @Model.EndPage; i++)
+            {
+                <li><a href="#">@i</a></li>
+            }
+            <li class="next"><a href="#"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+@if (Model.Cars.Any() && Model != null)
+{
+    <ul class="catalog_table">
+        @foreach (var item in Model.Cars)
+        {
+            <li>
+                <a href="#" class="thumb"><img src="" alt=""/></a>
+                <div class="catalog_desc">
+                    <div class="location">@item.ContactNumber</div>
+                    <div class="title_box">
+                        <h4><a href="#">@item.Manufacturers.ManufacturerName @item.Model.ModelTitle</a></h4>
+                        <div class="price">@item.Price میلیون تومان</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="grey_area">
+                        <span>@item.ProductionDate</span>
+                        <span>@item.Fuel</span>
+                        <span>@item.Transmition</span>
+                        <span>@item.SubModel.SubModelTitle</span>
+                        <span>@item.Trip کیلومتر</span>
+                    </div>
+                    <a href="#" class="more markered">دیدن جزئیات</a>
+                </div>
+            </li>
+        }
+        
+    </ul>
+}
+
+
+<div class="bottom_catalog_box">
+    <div class="pagination">
+        <ul>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li class="space">...</li>
+            <li><a href="#">8</a></li>
+            <li class="next"><a href="#"><img src="images/page_next.gif" alt="" /></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -13,10 +13,12 @@ namespace AutoDealer.Services.Impelementations
     public class CarServices : ICarServices
     {
         private IRepository<Car> _carRepository;
+        private IRepository<Manufacturer> _manufacturerRepository;
 
-        public CarServices(IRepository<Car> carRepository)
+        public CarServices(IRepository<Car> carRepository, IRepository<Manufacturer> manufacturerRepository)
         {
             _carRepository = carRepository;
+            _manufacturerRepository = manufacturerRepository;
         }
 
         public IEnumerable<Car> GetAllCars()
@@ -62,6 +64,44 @@ namespace AutoDealer.Services.Impelementations
             var cars = query.OrderByDescending(q => q.ID).Paging(pager).ToList();
 
             return filter.SetCars(cars).SetPaggingItem(pager);
+        }
+
+        public IEnumerable<Car> GetLastCars()
+        {
+            return _carRepository.Get(c=>c.IsActive).OrderByDescending(c => c.CreateTime).Take(20).ToList();
+        }
+
+        public IEnumerable<Car> GetListCarsByManufacturerAndModel(int manufacturerId, int modelId)
+        {
+            var cars = _carRepository.Get(c => c.Manufacturers.ID == manufacturerId&&c.ModelId==modelId&&c.IsActive).ToList();
+ 
+            if (!cars.Any())
+            {
+                return null;
+            }
+
+            return cars;
+        }
+
+        public Car GetCarByManufacturerAndModel(int manufacturerId, int modelId)
+        {
+            return _carRepository.Get(c => c.ManufacturerId == manufacturerId && c.ModelId == modelId&&c.IsActive).FirstOrDefault();
+        }
+
+        public int GetCountCars(int manufacturerId, int modelId)
+        {
+            return _carRepository.Get(c => c.ManufacturerId == manufacturerId && c.ModelId==modelId&&c.IsActive).ToList().Count();
+        }
+
+        public AdvertiseCatalogDto GetCatalogCarsByFilter(AdvertiseCatalogDto filter)
+        {
+            var query = _carRepository
+                .Get(c => c.IsActive && c.ManufacturerId == filter.ManufacturerId && c.ModelId == filter.ModelId)
+                .AsQueryable().SetCatalogCarsFilter(filter);
+            var count =(int) Math.Ceiling(query.Count() / (double) filter.TakeEntity);
+            var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
+            var catalogCars = query.OrderByDescending(c => c.CreateTime).Paging(pager).ToList();
+            return filter.SetCar(catalogCars).SetPagging(pager);
         }
 
         public void Dispose()

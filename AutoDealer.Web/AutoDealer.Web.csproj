@@ -305,6 +305,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CatalogJS\ListCatalog.js" />
     <Content Include="Content\css\index.html" />
     <Content Include="Content\css\jquery.fancybox-1.3.4.css" />
     <Content Include="Content\css\style.css" />
@@ -777,6 +778,7 @@
     <Compile Include="Areas\Admin\Controllers\ManufacturersController.cs" />
     <Compile Include="Areas\Admin\Controllers\Option_CategoryController.cs" />
     <Compile Include="Controllers\AdvertiseController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -804,6 +806,8 @@
     <Content Include="Views\Home\ViewBox.cshtml" />
     <Content Include="Views\Home\CarNews.cshtml" />
     <Content Include="Views\Advertise\Create.cshtml" />
+    <Content Include="Views\List\Car.cshtml" />
+    <Content Include="Views\List\ListCatalog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
