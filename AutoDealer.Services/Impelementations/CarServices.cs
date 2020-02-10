@@ -71,28 +71,6 @@ namespace AutoDealer.Services.Impelementations
             return _carRepository.Get(c=>c.IsActive).OrderByDescending(c => c.CreateTime).Take(20).ToList();
         }
 
-        public IEnumerable<Car> GetListCarsByManufacturerAndModel(int manufacturerId, int modelId)
-        {
-            var cars = _carRepository.Get(c => c.Manufacturers.ID == manufacturerId&&c.ModelId==modelId&&c.IsActive).ToList();
- 
-            if (!cars.Any())
-            {
-                return null;
-            }
-
-            return cars;
-        }
-
-        public Car GetCarByManufacturerAndModel(int manufacturerId, int modelId)
-        {
-            return _carRepository.Get(c => c.ManufacturerId == manufacturerId && c.ModelId == modelId&&c.IsActive).FirstOrDefault();
-        }
-
-        public int GetCountCars(int manufacturerId, int modelId)
-        {
-            return _carRepository.Get(c => c.ManufacturerId == manufacturerId && c.ModelId==modelId&&c.IsActive).ToList().Count();
-        }
-
         public AdvertiseCatalogDto GetCatalogCarsByFilter(AdvertiseCatalogDto filter)
         {
             var query = _carRepository
@@ -100,8 +78,15 @@ namespace AutoDealer.Services.Impelementations
                 .AsQueryable().SetCatalogCarsFilter(filter);
             var count =(int) Math.Ceiling(query.Count() / (double) filter.TakeEntity);
             var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
+            filter.TotalCars = query.Count();
             var catalogCars = query.OrderByDescending(c => c.CreateTime).Paging(pager).ToList();
             return filter.SetCar(catalogCars).SetPagging(pager);
+        }
+
+        public string GetManufacturerNameById(int manufacturerId)
+        {
+            return _carRepository.Get(c => c.ManufacturerId == manufacturerId)
+                .Select(c => c.Manufacturers.ManufacturerName).ToString();
         }
 
         public void Dispose()

@@ -20,12 +20,17 @@ namespace AutoDealer.Services.Extensions
 
         public static IQueryable<Car> SetCatalogCarsFilter(this IQueryable<Car> queryable, AdvertiseCatalogDto filter)
         {
-            if (!string.IsNullOrEmpty(filter.Filter))
+            if (filter.ManufacturerId!=0)
             {
-                queryable = queryable.Where(c =>
-                    c.Manufacturers.ManufacturerName.Contains(filter.Filter) ||
-                    c.Model.ModelTitle.Contains(filter.Filter));
+                queryable = queryable.Where(m => m.ManufacturerId == filter.ManufacturerId);
             }
+
+            if (filter.ModelId != 0)
+            {
+                queryable = queryable.Where(m => m.ModelId == filter.ModelId);
+            }
+
+          //  queryable = queryable.Where(m => m.Price >= filter.FromPrice && m.Price <= filter.ToPrice);
 
             return queryable;
         }

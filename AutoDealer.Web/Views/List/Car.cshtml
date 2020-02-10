@@ -1,83 +1,40 @@
 ﻿@model AutoDealer.Services.DTO.Advertise.AdvertiseCatalogDto
 
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = ViewBag.ManufacturerName;
 }
 
 <div class="main_wrapper">
-    <h1>ماشین ها : @Model.Cars.Count </h1>
+    <h1>ماشین ها : @Model.TotalCars </h1>
 
     <div class="catalog_sidebar">
         <div class="search_auto">
             <h3>جستجو خودکار</h3>
             <div class="clear"></div>
-            @using (Ajax.BeginForm("ListCatalog", FormMethod.Get, new AjaxOptions()
+            @using (Ajax.BeginForm("Car", FormMethod.Get, new AjaxOptions()
             {
                 UpdateTargetId = "listCar"
-            }))
+            }, new { id = "ListCatalog_Filter" }))
             {
                 <input type="hidden" name="@nameof(Model.ModelId)" value="@Model.ModelId" id="ModelId" />
                 <input type="hidden" name="@nameof(Model.ManufacturerId)" value="@Model.ManufacturerId" id="ManufacturerId" />
                 <input type="hidden" name="@nameof(Model.TakeEntity)" value="@Model.TakeEntity" id="TakeEntity" />
+                <input type="hidden" name="@nameof(Model.PageId)" value="@Model.PageId" id="PageId" />
 
-                <label><strong>سازنده:</strong></label>
+                <label><strong>شرکت:</strong></label>
                 <div class="select_box_1">
-                    <select class="select_1">
-                        <option value="0">هر</option>
-                        <option value="1">آئودی</option>
-                        <option value="2">مرسدس بنز</option>
-                        <option value="3">بی ام و</option>
-                        <option value="4">لکسوس</option>
-                        <option value="5">لینکلن</option>
-                        <option value="6">گدار</option>
-                        <option value="7">حکم</option>
-                        <option value="8">Dodge</option>
-                    </select>
+                    @Html.DropDownList("ManufacturerId", null, new { @id = "ddlmanufacture", @class = "select_3", @onchange = "javascript:GetModel(this.value);" })
                 </div>
                 <label><strong>مدل:</strong></label>
                 <div class="select_box_1">
-                    <select class="select_1">
-                        <option value="0">Any</option>
-                        <option value="1">R8</option>
-                        <option value="2">S500</option>
-                        <option value="3">540i</option>
-                        <option value="4">RX300</option>
-                        <option value="5">Navigator</option>
-                        <option value="6">Taurus</option>
-                        <option value="7">Doblo</option>
-                        <option value="8">Viper</option>
+                    <select class="select_4" name="@nameof(Model.ModelId)" id="ddlModel">
+                        <option>هر</option>
                     </select>
                 </div>
-                <label><strong>سال:</strong></label>
+                <label><strong>قیمت:</strong></label>
                 <div class="select_box_2">
-                    <select class="select_2">
+                    <select class="select_4" name="@nameof(Model.FromPrice)">
                         <option value="0">از</option>
-                        <option value="1">2013</option>
-                        <option value="2">2012</option>
-                        <option value="3">2011</option>
-                        <option value="4">2010</option>
-                        <option value="5">2009</option>
-                        <option value="6">2008</option>
-                        <option value="7">2007</option>
-                        <option value="8">2006</option>
-                    </select>
-                    <select class="select_4">
-                        <option value="0">To</option>
-                        <option value="1">2013</option>
-                        <option value="2">2012</option>
-                        <option value="3">2011</option>
-                        <option value="4">2010</option>
-                        <option value="5">2009</option>
-                        <option value="6">2008</option>
-                        <option value="7">2007</option>
-                        <option value="8">2006</option>
-                    </select>
-                    <div class="clear"></div>
-                </div>
-                <label><strong>Price:</strong></label>
-                <div class="select_box_2">
-                    <select class="select_4">
-                        <option value="0">From</option>
                         <option value="1">1000</option>
                         <option value="2">2000</option>
                         <option value="3">3000</option>
@@ -87,8 +44,8 @@
                         <option value="7">7000</option>
                         <option value="8">8000</option>
                     </select>
-                    <select class="select_4">
-                        <option value="0">To</option>
+                    <select class="select_4" name="@nameof(Model.ToPrice)">
+                        <option value="0">تا</option>
                         <option value="1">1000</option>
                         <option value="2">2000</option>
                         <option value="3">3000</option>
@@ -99,36 +56,6 @@
                         <option value="8">8000</option>
                     </select>
                     <div class="clear"></div>
-                </div>
-                <label><strong>Mileage:</strong></label>
-                <div class="select_box_2">
-                    <select class="select_4">
-                        <option value="0">From</option>
-                        <option value="1">1000</option>
-                        <option value="2">2000</option>
-                        <option value="3">3000</option>
-                        <option value="4">4000</option>
-                        <option value="5">5000</option>
-                        <option value="6">6000</option>
-                        <option value="7">7000</option>
-                        <option value="8">8000</option>
-                    </select>
-                    <select class="select_4">
-                        <option value="0">To</option>
-                        <option value="1">1000</option>
-                        <option value="2">2000</option>
-                        <option value="3">3000</option>
-                        <option value="4">4000</option>
-                        <option value="5">5000</option>
-                        <option value="6">6000</option>
-                        <option value="7">7000</option>
-                        <option value="8">8000</option>
-                    </select>
-                    <div class="clear"></div>
-                </div>
-                <div class="chb_wrapper">
-                    <input type="checkbox" />
-                    <label class="check_label">تنها اتومبیل های جدید</label>
                 </div>
                 <input type="submit" value="Search" class="btn_search" />
             }
@@ -143,5 +70,6 @@
 @section Scripts
 {
     <script src="~/Content/CatalogJS/ListCatalog.js"></script>
+    <script src="~/Content/ReloadListJS/ModelList.js"></script>
 }
 

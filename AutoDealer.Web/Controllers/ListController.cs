@@ -14,7 +14,10 @@ namespace AutoDealer.Web.Controllers
        
         [Route("Car/{manufacturerId}/{modelId}")]
         public ActionResult Car(int manufacturerId, int modelId)
-        { 
+        {
+            ViewBag.ManufacturerName = unitOfWork.CarServices.GetManufacturerNameById(manufacturerId);
+            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+
             return View(unitOfWork.CarServices.GetCatalogCarsByFilter(new AdvertiseCatalogDto
             {
                 ManufacturerId = manufacturerId,
@@ -22,7 +25,6 @@ namespace AutoDealer.Web.Controllers
                 TakeEntity = 1
             }));
         }
-
         public ActionResult ListCatalog(AdvertiseCatalogDto filterCatalog)
         {
             return PartialView(unitOfWork.CarServices.GetCatalogCarsByFilter(filterCatalog));

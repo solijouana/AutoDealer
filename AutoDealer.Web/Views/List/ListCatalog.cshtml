@@ -19,6 +19,7 @@
         </div>
         <div class="clear"></div>
     </div>
+    
     <div class="view_on_page drop_list">
         <strong>نمایش در صفحه:</strong>
         <div class="selected">
@@ -33,12 +34,15 @@
         <div class="clear"></div>
     </div>
     <div class="pagination">
+        @{
+            int i = 0;
+        }
         <ul>
-            @for (var i = @Model.StartPage; i <= @Model.EndPage; i++)
+            @for (i = Model.StartPage; i <= Model.EndPage; i++)
             {
-                <li><a href="#">@i</a></li>
+                <li class="@((Model.PageId==i)?"active":"")"><a onclick="Pagging(@i)" style="cursor: pointer">@i</a></li>
             }
-            <li class="next"><a href="#"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
+            <li class="next"><a onclick="Pagging(@(i-1))" style="cursor: pointer"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
         </ul>
     </div>
     <div class="clear"></div>
@@ -76,13 +80,15 @@
 
 <div class="bottom_catalog_box">
     <div class="pagination">
+        @{
+            int j = 0;
+        }
         <ul>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li class="space">...</li>
-            <li><a href="#">8</a></li>
-            <li class="next"><a href="#"><img src="images/page_next.gif" alt="" /></a></li>
+            @for (j = Model.StartPage; j <= Model.EndPage; j++)
+            {
+                <li class="@((Model.PageId==j)?"active":"")"><a onclick="Pagging(@j)" style="cursor: pointer">@j</a></li>
+            }
+            <li class="next"><a onclick="Pagging(@(j-1))" style="cursor: pointer"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
         </ul>
     </div>
     <div class="clear"></div>

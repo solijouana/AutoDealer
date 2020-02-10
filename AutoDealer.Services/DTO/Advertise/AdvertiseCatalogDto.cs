@@ -6,10 +6,12 @@ namespace AutoDealer.Services.DTO.Advertise
 {
    public class AdvertiseCatalogDto:BasePaging
     {
-        public string Filter { get; set; }
+        public int FromPrice { get; set; }
+        public int ToPrice { get; set; }
         public List<Car> Cars { get; set; }
         public int ManufacturerId { get; set; }
         public int ModelId { get; set; }
+        public int TotalCars { get; set; }
         public string ManufacturerName { get; set; }
        public AdvertiseCatalogDto SetPagging(BasePaging paging)
         {
