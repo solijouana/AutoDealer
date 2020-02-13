@@ -66,3 +66,11 @@ D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addsubmodelcollection.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeRelationwithinCarandSubModel.resources
 D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.RemoveImageTilefromCar_Gallery.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changerelationwithintables.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeconfigtables.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addrelwithinmanufacturerandmodel.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addmanufacturerId.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changerels.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addsubmodelcollection.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeRelationwithinCarandSubModel.resources
+D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.RemoveImageTilefromCar_Gallery.resources
