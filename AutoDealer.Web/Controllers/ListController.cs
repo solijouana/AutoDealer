@@ -15,7 +15,7 @@ namespace AutoDealer.Web.Controllers
         [Route("Car/{manufacturerId}/{modelId}")]
         public ActionResult Car(int manufacturerId, int modelId)
         {
-            ViewBag.ManufacturerName = unitOfWork.CarServices.GetManufacturerNameById(manufacturerId);
+            ViewBag.ManufacturerName = unitOfWork.ManufacturerServices.GetManufacturerNameById(manufacturerId);
             ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
 
             return View(unitOfWork.CarServices.GetCatalogCarsByFilter(new AdvertiseCatalogDto

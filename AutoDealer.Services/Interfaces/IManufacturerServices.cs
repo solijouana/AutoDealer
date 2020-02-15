@@ -15,5 +15,6 @@ namespace AutoDealer.Services.Interfaces
         void DeleteManufacturer(int manufacturerId);
         Manufacturer GetManufacturerById(int manufacturerId);
         int ReturnManufacturer(int id);
+        string GetManufacturerNameById(int manufacturerId);
     }
 }

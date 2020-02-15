@@ -24,3 +24,19 @@ function Pagging(pageId) {
         $("#PageId").val(data.PageId);
     });
 }
+
+function Search() {
+    var data = {
+        manufacturerId: $("#ddlmanufacture").val(),
+        modelId: $("#ddlModel").val(),
+        FromPrice: $("#ddlFrom").val(),
+        ToPrice: $("#ddlTo").val(),
+        TakeEntity:$("#TakeEntity").val()
+    };
+
+    $.get("/List/ListCatalog/", data).done(function (res) {
+        $("#ManufacturerId").val(data.manufacturerId);
+        $("#ModelId").val(data.modelId);
+        $("#listCar").html(res);
+    });
+}

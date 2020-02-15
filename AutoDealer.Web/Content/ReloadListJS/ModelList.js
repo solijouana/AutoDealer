@@ -1,7 +1,7 @@
 ﻿function GetModel(_manufacturerId) {
 
     var procemessage = "<option value='0'> Please wait...</option>";
-    $("#ddlModel").html(procemessage).show();
+    $("#ddlModel").html(procemessage);
     var url = "/Advertise/ReloadModelList/";
 
     $.ajax({

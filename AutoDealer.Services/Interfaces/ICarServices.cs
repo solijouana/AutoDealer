@@ -16,6 +16,5 @@ namespace AutoDealer.Services.Interfaces
         AdminAdvertiseDto GetCarsByFilter(AdminAdvertiseDto filter);
         IEnumerable<Car> GetLastCars();
         AdvertiseCatalogDto GetCatalogCarsByFilter(AdvertiseCatalogDto filter);
-        string GetManufacturerNameById(int manufacturerId);
     }
 }

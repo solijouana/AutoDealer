@@ -68,25 +68,18 @@ namespace AutoDealer.Services.Impelementations
 
         public IEnumerable<Car> GetLastCars()
         {
-            return _carRepository.Get(c=>c.IsActive).OrderByDescending(c => c.CreateTime).Take(20).ToList();
+            return _carRepository.Get(c => c.IsActive).OrderByDescending(c => c.CreateTime).Take(20).ToList();
         }
 
         public AdvertiseCatalogDto GetCatalogCarsByFilter(AdvertiseCatalogDto filter)
         {
             var query = _carRepository
-                .Get(c => c.IsActive && c.ManufacturerId == filter.ManufacturerId && c.ModelId == filter.ModelId)
-                .AsQueryable().SetCatalogCarsFilter(filter);
-            var count =(int) Math.Ceiling(query.Count() / (double) filter.TakeEntity);
+                .Get(null).AsQueryable().SetCatalogCarsFilter(filter);
+            var count = (int)Math.Ceiling(query.Count() / (double)filter.TakeEntity);
             var pager = Pager.Build(count, filter.PageId, filter.TakeEntity);
             filter.TotalCars = query.Count();
             var catalogCars = query.OrderByDescending(c => c.CreateTime).Paging(pager).ToList();
             return filter.SetCar(catalogCars).SetPagging(pager);
-        }
-
-        public string GetManufacturerNameById(int manufacturerId)
-        {
-            return _carRepository.Get(c => c.ManufacturerId == manufacturerId)
-                .Select(c => c.Manufacturers.ManufacturerName).ToString();
         }
 
         public void Dispose()

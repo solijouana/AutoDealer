@@ -66,6 +66,11 @@ namespace AutoDealer.Services.Impelementations
 
         }
 
+        public string GetManufacturerNameById(int manufacturerId)
+        {
+            return _manuRepository.GetById(manufacturerId).ManufacturerName;
+        }
+
         public void Dispose()
         {
             _manuRepository?.Dispose();

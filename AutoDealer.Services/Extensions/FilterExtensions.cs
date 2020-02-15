@@ -30,7 +30,11 @@ namespace AutoDealer.Services.Extensions
                 queryable = queryable.Where(m => m.ModelId == filter.ModelId);
             }
 
-          //  queryable = queryable.Where(m => m.Price >= filter.FromPrice && m.Price <= filter.ToPrice);
+            if (filter.FromPrice != 0||filter.ToPrice!=0)
+            {
+                queryable = queryable.Where(m => m.Price >= filter.FromPrice && m.Price <= filter.ToPrice);
+            }
+           
 
             return queryable;
         }
