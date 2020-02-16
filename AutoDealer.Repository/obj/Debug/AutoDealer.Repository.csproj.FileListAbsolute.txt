@@ -74,3 +74,4 @@ D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Mig
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.addsubmodelcollection.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changeRelationwithinCarandSubModel.resources
 D:\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.RemoveImageTilefromCar_Gallery.resources
+D:\D\My Projects\Projects\AutoDealer\AutoDealer.Repository\obj\Debug\AutoDealer.Repository.Migrations.changedatatypetrip.resources

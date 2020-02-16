@@ -1,51 +1,21 @@
 ﻿@using AutoDealer
+@using AutoDealer.Data.Vehicle
 @model AutoDealer.Services.DTO.Advertise.AdvertiseCatalogDto
 
-<div class="top_catalog_box">
-    <div class="switch">
-        <span class="table_view"></span>
-        <a href="#" class="list_view"></a>
-    </div>
-    <div class="sorting drop_list">
-        <strong>مرتب سازی بر اساس: </strong>
-        <div class="selected">
-            <span><a href="#">تاریخ</a></span>
-            <ul>
-                <li><a href="#">تاریخ</a></li>
-                <li><a href="#">قیمت</a></li>
-                <li><a href="#">نام</a></li>
-                <li><a href="#">سازنده</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="view_on_page drop_list">
-        <strong>نمایش در صفحه:</strong>
-        <div class="selected">
-            <span><a href="#">10</a></span>
-            <ul>
-                <li><a href="#">10</a></li>
-                <li><a href="#">20</a></li>
-                <li><a href="#">50</a></li>
-                <li><a href="#">100</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="pagination">
-        @{
-            int i = 0;
+<div class="pagination">
+    @{
+        int i = 0;
+        List<Car_Gallery> CarImages = ViewBag.Images as List<Car_Gallery>;
+    }
+    <ul>
+        @for (i = Model.StartPage; i <= Model.EndPage; i++)
+        {
+            <li class="@((Model.PageId==i)?"active":"")"><a onclick="Pagging(@i)" style="cursor: pointer">@i</a></li>
         }
-        <ul>
-            @for (i = Model.StartPage; i <= Model.EndPage; i++)
-            {
-                <li class="@((Model.PageId==i)?"active":"")"><a onclick="Pagging(@i)" style="cursor: pointer">@i</a></li>
-            }
-            <li class="next"><a onclick="Pagging(@(i-1))" style="cursor: pointer"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
-        </ul>
-    </div>
-    <div class="clear"></div>
+        <li class="next"><a onclick="Pagging(@(i-1))" style="cursor: pointer"><img src="/Content/images/page_next.gif" alt="Next_Page" /></a></li>
+    </ul>
 </div>
+<div class="clear"></div>
 
 @if (Model.Cars.Any() && Model != null)
 {
@@ -53,7 +23,14 @@
         @foreach (var item in Model.Cars)
         {
             <li>
-                <a href="#" class="thumb"><img src="" alt=""/></a>
+                @if (CarImages != null && CarImages.Any())
+                {
+                    foreach (var carGallery in CarImages.Where(c=>c.CarId==item.ID))
+                    {
+                        <a href="#" class="thumb"><img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)"/></a>        
+                    }
+                }
+                
                 <div class="catalog_desc">
                     <div class="location">@item.ContactNumber</div>
                     <div class="title_box">
@@ -72,7 +49,7 @@
                 </div>
             </li>
         }
-        
+
     </ul>
 }
 

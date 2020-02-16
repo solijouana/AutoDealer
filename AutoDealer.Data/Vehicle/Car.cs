@@ -16,7 +16,7 @@ namespace AutoDealer.Data.Vehicle
 
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [Display(Name = "سال ساخت")]
-        public string ProductionDate { get; set; }
+        public int ProductionDate { get; set; }
 
         [Display(Name = "نوع سوخت")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

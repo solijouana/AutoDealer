@@ -27,7 +27,10 @@ namespace AutoDealer.Web.Controllers
         }
         public ActionResult ListCatalog(AdvertiseCatalogDto filterCatalog)
         {
-            return PartialView(unitOfWork.CarServices.GetCatalogCarsByFilter(filterCatalog));
+            var cars = unitOfWork.CarServices.GetCatalogCarsByFilter(filterCatalog);
+            ViewBag.Images = unitOfWork.Car_GalleryServices.GetCarGalleriesByCarsFilter(cars.Cars);
+
+            return PartialView(cars);
         }
     }
 }   

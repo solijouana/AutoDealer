@@ -134,6 +134,10 @@
     <Compile Include="Migrations\202001211112479_Remove ImageTile from Car_Gallery.designer.cs">
       <DependentUpon>202001211112479_Remove ImageTile from Car_Gallery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002161102435_change datatype trip.cs" />
+    <Compile Include="Migrations\202002161102435_change datatype trip.designer.cs">
+      <DependentUpon>202002161102435_change datatype trip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211112479_Remove ImageTile from Car_Gallery.resx">
       <DependentUpon>202001211112479_Remove ImageTile from Car_Gallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002161102435_change datatype trip.resx">
+      <DependentUpon>202002161102435_change datatype trip.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
