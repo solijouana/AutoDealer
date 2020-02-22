@@ -39,7 +39,7 @@
             </div>
             <div class="select_wrapper">
                 <label><span>*</span><strong>سال ساخت</strong></label>
-                @Html.TextBoxFor(m => m.ProductionDate, htmlAttributes: new { @class = "form-control" })
+                <input type="number" class="form-control" name="@nameof(Model.ProductionDate)" value="0" />
                 @Html.ValidationMessageFor(m => m.ProductionDate)
             </div>
             <div class="select_wrapper">
@@ -131,7 +131,7 @@
             <div class="clear"></div>
         </div>
         <div class="sell_submit_wrapper">
-            <input type="submit" value="Submit" class="sell_submit" />
+            <input type="submit" value="ثبت آگهی" class="sell_submit" />
             <div class="clear"></div>
         </div>
     }

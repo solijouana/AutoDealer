@@ -1,22 +1,33 @@
 ﻿@using AutoDealer
+@using AutoDealer.Data.Vehicle
 @model IEnumerable<AutoDealer.Data.Vehicle.Car>
 
 <div class="recent" dir=ltr>
+    @{
+        List<Car_Gallery> carGalleries = ViewBag.Images as List<Car_Gallery>;
+    }
     <h2><strong>اخیر</strong> لیست</h2>
-    @if (Model!=null&&Model.Any())
+    @if (Model != null && Model.Any())
     {
         <div class="recent_carousel">
             @foreach (var item in Model)
             {
                 <div class="slide">
                     <a href="/Car/@item.Manufacturers.ID/@item.ModelId">
-                        <img src="" alt=""/>
+                        @if (carGalleries != null && carGalleries.Any())
+                        {
+                            foreach (var carGallery in carGalleries.Where(c=>c.CarId==item.ID))
+                            {
+                                <img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)" width="150"/>        
+                            }
+                        }
+                        
                         <div class="description">@item.ProductionDate<br/>@item.Fuel<br/>@item.SubModel.SubModelTitle<br/>@item.Model.ModelTitle<br/>@item.Trip</div>
-                        <div class="title">@item.Manufacturers.ManufacturerName<span class="price">@item.Price</span></div>
+                        <div class="title">@item.Manufacturers.ManufacturerName<span class="price">@item.Price میلیون تومان</span></div>
                     </a>
                 </div>
             }
-            
+
         </div>
     }
 

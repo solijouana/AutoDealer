@@ -16,43 +16,52 @@
             <input type="hidden" name="@nameof(Model.TakeEntity)" value="@Model.TakeEntity" id="TakeEntity" />
             <input type="hidden" name="@nameof(Model.PageId)" value="@Model.PageId" id="PageId" />
 
-                <label><strong>شرکت:</strong></label>
-                <div class="select_box_1">
-                    @Html.DropDownList("ManufacturerId", null, new { @id = "ddlmanufacture", @class = "select_3", @onchange = "javascript:GetModel(this.value);" })
+            <label><strong>شرکت:</strong></label>
+            <div class="select_box_1">
+                @Html.DropDownList("ManufacturerId", null, new { @id = "ddlmanufacture", @class = "select_3", @onchange = "javascript:GetModel(this.value);" })
+            </div>
+            <label><strong>مدل:</strong></label>
+            <div class="select_box_1">
+                <select class="select2" id="ddlModel"></select>
+            </div>
+            <label><strong>قیمت:</strong></label>
+            <div class="select_box_2">
+                <select class="select_4" name="@nameof(Model.FromPrice)" id="ddlFrom">
+                    <option value="0">از</option>
+                    <option value="1">1</option>
+                    <option value="1000000">1,000,000</option>
+                    <option value="10000000">10,000,000</option>
+                    <option value="50000000">50,000,000</option>
+                    <option value="100000000">100,000,000</option>
+                    <option value="500000000">500,000,000</option>
+                    <option value="1000000000">1,000,000,000</option>
+                    <option value="2000000000">2,000,000,000</option>
+                </select>
+                <select class="select_4" name="@nameof(Model.ToPrice)" id="ddlTo">
+                    <option value="0">تا</option>
+                    <option value="1">1</option>
+                    <option value="1000000">1,000,000</option>
+                    <option value="10000000">10,000,000</option>
+                    <option value="50000000">50,000,000</option>
+                    <option value="100000000">100,000,000</option>
+                    <option value="500000000">500,000,000</option>
+                    <option value="1000000000">1,000,000,000</option>
+                    <option value="2000000000">2,000,000,000</option>
+                </select>
+                <div class="clear"></div>
+            </div>
+            <div class="sell_box sell_box_5">
+                <div class="input_wrapper">
+                    <label><strong>از سال: </strong></label>
+                    <input class="txb" value="" type="text">
                 </div>
-                <label><strong>مدل:</strong></label>
-                <div class="select_box_1">
-                    <select class="select_3" name="@nameof(Model.ModelId)" id="ddlModel">
-                    </select>
+                <div class="input_wrapper">
+                    <label><strong>تا سال </strong></label>
+                    <input class="txb" value="" type="text">
                 </div>
-                <label><strong>قیمت:</strong></label>
-                <div class="select_box_2">
-                    <select class="select_4" name="@nameof(Model.FromPrice)" id="ddlFrom">
-                        <option value="0">از</option>
-                        <option value="1">1</option>
-                        <option value="1000000">1,000,000</option>
-                        <option value="10000000">10,000,000</option>
-                        <option value="50000000">50,000,000</option>
-                        <option value="100000000">100,000,000</option>
-                        <option value="500000000">500,000,000</option>
-                        <option value="1000000000">1,000,000,000</option>
-                        <option value="2000000000">2,000,000,000</option>
-                    </select>
-                    <select class="select_4" name="@nameof(Model.ToPrice)" id="ddlTo">
-                        <option value="0">تا</option>
-                        <option value="1">1</option>
-                        <option value="1000000">1,000,000</option>
-                        <option value="10000000">10,000,000</option>
-                        <option value="50000000">50,000,000</option>
-                        <option value="100000000">100,000,000</option>
-                        <option value="500000000">500,000,000</option>
-                        <option value="1000000000">1,000,000,000</option>
-                        <option value="2000000000">2,000,000,000</option>
-                    </select>
-                    <div class="clear"></div>
-                </div>
-            <button class="btn_search" onclick="Search()">جستجو</button>
-            <div class="clear"></div>
+                <button class="btn_search" onclick="Search()">جستجو</button>
+                <div class="clear"></div>
+            </div>
         </div>
     </div>
     <div class="main_catalog" id="listCar">

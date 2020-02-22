@@ -17,7 +17,6 @@ namespace AutoDealer.Web.Controllers
         {
             ViewBag.ManufacturerName = unitOfWork.ManufacturerServices.GetManufacturerNameById(manufacturerId);
             ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
-
             return View(unitOfWork.CarServices.GetCatalogCarsByFilter(new AdvertiseCatalogDto
             {
                 ManufacturerId = manufacturerId,

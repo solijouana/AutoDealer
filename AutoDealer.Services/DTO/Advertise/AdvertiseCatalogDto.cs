@@ -13,6 +13,8 @@ namespace AutoDealer.Services.DTO.Advertise
         public int ModelId { get; set; }
         public int TotalCars { get; set; }
         public string ManufacturerName { get; set; }
+        public int FromYear { get; set; }
+        public int ToYear { get; set; }
        public AdvertiseCatalogDto SetPagging(BasePaging paging)
         {
             PageId = paging.PageId;

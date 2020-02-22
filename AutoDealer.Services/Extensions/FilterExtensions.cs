@@ -32,10 +32,14 @@ namespace AutoDealer.Services.Extensions
 
             if (filter.FromPrice != 0||filter.ToPrice!=0)
             {
-                queryable = queryable.Where(m => m.Price >= filter.FromPrice && m.Price <= filter.ToPrice);
+                queryable = queryable.Where(m => m.Price >= filter.FromPrice || m.Price <= filter.ToPrice);
             }
-           
 
+            if (filter.FromYear != 0 || filter.ToYear != 0)
+            {
+                queryable = queryable.Where(m =>
+                    m.ProductionDate >= filter.FromYear || m.ProductionDate <= filter.ToYear);
+            }
             return queryable;
         }
 

@@ -28,7 +28,9 @@ namespace AutoDealer.Web.Controllers
 
         public ActionResult LastCars()
         {
-            return PartialView(unitOfWork.CarServices.GetLastCars());
+            var lastCars = unitOfWork.CarServices.GetLastCars();
+            ViewBag.Images = unitOfWork.Car_GalleryServices.GetCarGalleriesByCarsFilter(lastCars);
+            return PartialView(lastCars);
         }
 
         public ActionResult Banner()

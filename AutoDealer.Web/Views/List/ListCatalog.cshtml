@@ -27,7 +27,7 @@
                 {
                     foreach (var carGallery in CarImages.Where(c=>c.CarId==item.ID))
                     {
-                        <a href="#" class="thumb"><img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)"/></a>        
+                        <a href="#" class="thumb"><img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)" width="150" height="100"/></a>        
                     }
                 }
                 
