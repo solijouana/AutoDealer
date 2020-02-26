@@ -31,6 +31,8 @@ function Search() {
         modelId: $("#ddlModel").val(),
         FromPrice: $("#ddlFrom").val(),
         ToPrice: $("#ddlTo").val(),
+        FromYear: $("#txtFromYear").val(),
+        ToYear:$("#txtToYear").val(),
         TakeEntity:$("#TakeEntity").val()
     };
 

@@ -23,6 +23,8 @@ namespace AutoDealer.Web.Controllers
 
         public ActionResult Search()
         {
+            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID",
+                "ManufacturerName");
             return PartialView();
         }
 

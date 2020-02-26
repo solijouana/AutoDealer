@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using AutoDealer.Data.Vehicle;
-using AutoDealer.Utilities.Convertors;
 using AutoDealer.Utilities.ImageTools;
 using AutoDealer.Web.UOW;
 
@@ -48,8 +45,8 @@ namespace AutoDealer.Web.Controllers
                         if (image != null)
                         {
                             fileNames.Add(Guid.NewGuid() + image.FileName);
-                            string imagePath = Server.MapPath("/Images/Cars/");
-                            string thumbPath = Server.MapPath("/Images/Cars/Thumb/");
+                            string imagePath = ImagePath.ImageServerPath;
+                            string thumbPath = ImagePath.ThumbImageServerPath;
                             image.AddImageToServer(fileNames[count], imagePath, null, null, thumbPath);
                             count++;
                         }

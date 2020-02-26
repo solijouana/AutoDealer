@@ -28,36 +28,34 @@
             <div class="select_box_2">
                 <select class="select_4" name="@nameof(Model.FromPrice)" id="ddlFrom">
                     <option value="0">از</option>
-                    <option value="1">1</option>
-                    <option value="1000000">1,000,000</option>
-                    <option value="10000000">10,000,000</option>
-                    <option value="50000000">50,000,000</option>
-                    <option value="100000000">100,000,000</option>
-                    <option value="500000000">500,000,000</option>
-                    <option value="1000000000">1,000,000,000</option>
-                    <option value="2000000000">2,000,000,000</option>
+                    <option value="1000000">1میلیون</option>
+                    <option value="10000000">10میلیون</option>
+                    <option value="50000000">50میلیون</option>
+                    <option value="100000000">100میلیون</option>
+                    <option value="500000000">500میلیون</option>
+                    <option value="1000000000">1میلیارد</option>
+                    <option value="2000000000">2میلیارد</option>
                 </select>
                 <select class="select_4" name="@nameof(Model.ToPrice)" id="ddlTo">
                     <option value="0">تا</option>
-                    <option value="1">1</option>
-                    <option value="1000000">1,000,000</option>
-                    <option value="10000000">10,000,000</option>
-                    <option value="50000000">50,000,000</option>
-                    <option value="100000000">100,000,000</option>
-                    <option value="500000000">500,000,000</option>
-                    <option value="1000000000">1,000,000,000</option>
-                    <option value="2000000000">2,000,000,000</option>
+                    <option value="1000000">1میلیون</option>
+                    <option value="10000000">10میلیون</option>
+                    <option value="50000000">50میلیون</option>
+                    <option value="100000000">100میلیون</option>
+                    <option value="500000000">500میلیون</option>
+                    <option value="1000000000">1میلیارد</option>
+                    <option value="2000000000">2میلیارد</option>
                 </select>
                 <div class="clear"></div>
             </div>
             <div class="sell_box sell_box_5">
                 <div class="input_wrapper">
                     <label><strong>از سال: </strong></label>
-                    <input class="txb" value="" type="text">
+                    <input class="txb"  type="text" id="txtFromYear">
                 </div>
                 <div class="input_wrapper">
                     <label><strong>تا سال </strong></label>
-                    <input class="txb" value="" type="text">
+                    <input class="txb"  type="text" id="txtToYear">
                 </div>
                 <button class="btn_search" onclick="Search()">جستجو</button>
                 <div class="clear"></div>

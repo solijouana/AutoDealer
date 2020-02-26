@@ -16,14 +16,14 @@
                     <a href="/Car/@item.Manufacturers.ID/@item.ModelId">
                         @if (carGalleries != null && carGalleries.Any())
                         {
-                            foreach (var carGallery in carGalleries.Where(c=>c.CarId==item.ID))
+                            foreach (var carGallery in carGalleries.Where(c => c.CarId == item.ID))
                             {
-                                <img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)" width="150"/>        
+                                <img src="@(ImagePath.ThumbImagePath+carGallery.ImageName)" width="150" />
                             }
                         }
-                        
-                        <div class="description">@item.ProductionDate<br/>@item.Fuel<br/>@item.SubModel.SubModelTitle<br/>@item.Model.ModelTitle<br/>@item.Trip</div>
-                        <div class="title">@item.Manufacturers.ManufacturerName<span class="price">@item.Price میلیون تومان</span></div>
+
+                        <div class="description">@item.ProductionDate<br />@item.Fuel<br />@item.SubModel.SubModelTitle<br />@item.Model.ModelTitle<br />@item.Trip</div>
+                        <div class="title">@item.Manufacturers.ManufacturerName<span class="price">@item.Price تومان</span></div>
                     </a>
                 </div>
             }

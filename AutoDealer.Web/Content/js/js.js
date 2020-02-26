@@ -1,21 +1,21 @@
 
 jQuery(document).ready(function(){
-	/*jQuery('.slider').mobilyslider({
-		content: '.sliderContent',
-		children: 'div',
-		transition: 'horizontal',
-		animationSpeed: 500,
-		autoplay: false,
-		autoplaySpeed: 3000,
-		pauseOnHover: false,
-		bullets: true,
-		arrows: false,
-		arrowsHide: true,
-		prev: 'prev',
-		next: 'next',
-		animationStart: function(){},
-		animationComplete: function(){}
-	});*/
+	//jQuery('.slider').mobilyslider({
+	//	content: '.sliderContent',
+	//	children: 'div',
+	//	transition: 'horizontal',
+	//	animationSpeed: 500,
+	//	autoplay: false,
+	//	autoplaySpeed: 3000,
+	//	pauseOnHover: false,
+	//	bullets: true,
+	//	arrows: false,
+	//	arrowsHide: true,
+	//	prev: 'prev',
+	//	next: 'next',
+	//	animationStart: function(){},
+	//	animationComplete: function(){}
+	//});
 	$('.slider_1').bxSlider({
    	 	slideWidth: 940,
     	minSlides: 1,
