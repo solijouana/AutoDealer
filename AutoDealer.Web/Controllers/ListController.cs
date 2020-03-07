@@ -12,7 +12,6 @@ namespace AutoDealer.Web.Controllers
             this.unitOfWork = unitOfWork;
         }
        
-        [Route("Car/{manufacturerId}/{modelId}")]
         public ActionResult Car(int manufacturerId, int modelId)
         {
             ViewBag.ManufacturerName = unitOfWork.ManufacturerServices.GetManufacturerNameById(manufacturerId);
