@@ -14,6 +14,6 @@ namespace AutoDealer.Services.Interfaces
         void DeleteCar_Gallery(int carId);
         Car_Gallery GetCar_GalleryById(int car_GalleryId);
         List<Car_Gallery> GetCarGalleriesByCarsFilter(IEnumerable<Car>cars);
-
+        Car_Gallery GetCarGalleryByCarId(int carId);
     }
 }

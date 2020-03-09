@@ -1,4 +1,6 @@
-﻿using AutoDealer.Data.Vehicle;
+﻿using System.Collections.Generic;
+using System.Linq;
+using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.DataTransactions;
 using AutoDealer.Services.Interfaces;
 
@@ -12,6 +14,12 @@ namespace AutoDealer.Services.Impelementations
         {
             _optionRepository = optionRepository;
         }
+
+        public IEnumerable<Option> GetAllOptions()
+        {
+            return _optionRepository.Get(null).ToList();
+        }
+
         public void CreateOption(Option newOption)
         {
             _optionRepository.Insert(newOption);

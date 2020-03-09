@@ -22,6 +22,7 @@ namespace AutoDealer.Web.Controllers
         {
             ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
             ViewBag.Option_Category = unitOfWork.Option_CategoryServices.GetAllOption_Category();
+           
             return View();
         }
 
@@ -82,6 +83,21 @@ namespace AutoDealer.Web.Controllers
             SelectList obgSubModelList = new SelectList(subModel, "ID", "SubModelTitle", 0);
 
             return Json(obgSubModelList);
+        }
+
+        [Route("Vehicle/{id}")]
+        public ActionResult Vehicle(int id)
+        {
+            var imageCar = unitOfWork.Car_GalleryServices.GetCarGalleryByCarId(id);
+            ViewBag.ImageCar = imageCar != null ? imageCar.ImageName : ImagePath.NoPhoto;
+            ViewBag.OptionsCategory = unitOfWork.Option_CategoryServices.GetAllOption_Category();
+
+            return View(unitOfWork.CarServices.GetCarById(id));
+        }
+
+        public ActionResult SameAdv()
+        {
+            return PartialView();
         }
     }
 }

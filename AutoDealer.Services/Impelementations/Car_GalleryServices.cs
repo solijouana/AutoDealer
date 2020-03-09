@@ -8,22 +8,22 @@ namespace AutoDealer.Services.Impelementations
 {
     public class Car_GalleryServices:ICar_GalleryServices
     {
-        private IRepository<Car_Gallery> _carRepository;
+        private IRepository<Car_Gallery> _carGalleryRepository;
 
         public Car_GalleryServices(IRepository<Car_Gallery> carRepository)
         {
-            _carRepository = carRepository;
+            _carGalleryRepository = carRepository;
         }
 
         public IEnumerable<Car_Gallery> CarGalleries()
         {
-            return _carRepository.Get(null).ToList();
+            return _carGalleryRepository.Get(null).ToList();
         }
 
         public void CreateCar_Gallery(Car_Gallery newCar_Gallery)
         {
-            _carRepository.Insert(newCar_Gallery);
-            _carRepository.Save();
+            _carGalleryRepository.Insert(newCar_Gallery);
+            _carGalleryRepository.Save();
         }
 
         public void InsertMultiImage(List<string> carGalleries,int carId)
@@ -32,7 +32,7 @@ namespace AutoDealer.Services.Impelementations
             {
                 foreach (var carGallery in carGalleries)
                 {
-                    _carRepository.Insert(new Car_Gallery()
+                    _carGalleryRepository.Insert(new Car_Gallery()
                     {
                         CarId = carId,
                         ImageName = carGallery
@@ -43,19 +43,19 @@ namespace AutoDealer.Services.Impelementations
 
         public void EditCar_Gallery(Car_Gallery editedCar_Gallery)
         {
-            _carRepository.Update(editedCar_Gallery);
-            _carRepository.Save();
+            _carGalleryRepository.Update(editedCar_Gallery);
+            _carGalleryRepository.Save();
         }
 
         public void DeleteCar_Gallery(Car_Gallery car_Gallery)
         {
-            _carRepository.Update(car_Gallery);
-            _carRepository.Save();
+            _carGalleryRepository.Update(car_Gallery);
+            _carGalleryRepository.Save();
         }
 
         public void DeleteCar_Gallery(int carId)
         {
-            var car_Gallery =_carRepository.GetById(carId);
+            var car_Gallery = _carGalleryRepository.GetById(carId);
             if (car_Gallery != null)
             {
                 DeleteCar_Gallery(car_Gallery);
@@ -64,7 +64,7 @@ namespace AutoDealer.Services.Impelementations
 
         public Car_Gallery GetCar_GalleryById(int car_GalleryId)
         {
-            return _carRepository.GetById(car_GalleryId);
+            return _carGalleryRepository.GetById(car_GalleryId);
         }
 
         public List<Car_Gallery> GetCarGalleriesByCarsFilter(IEnumerable<Car> cars)
@@ -72,16 +72,27 @@ namespace AutoDealer.Services.Impelementations
             List<Car_Gallery>Images=new List<Car_Gallery>();
             foreach (var car in cars)
             {
-                var images = _carRepository.Get(g => g.CarId == car.ID).OrderByDescending(g => g.ID).Take(1).ToList();
+                var images = _carGalleryRepository.Get(g => g.CarId == car.ID).OrderByDescending(g => g.ID).Take(1).ToList();
                 Images.AddRange(images);
             }
 
             return Images;
         }
 
+        public Car_Gallery GetCarGalleryByCarId(int carId)
+        {
+            var carGallery = _carGalleryRepository.Get(g => g.CarId == carId).FirstOrDefault();
+            if (carGallery != null)
+            {
+                return carGallery;
+            }
+
+            return null;
+        }
+
         public void Dispose()
         {
-            _carRepository?.Dispose();
+            _carGalleryRepository?.Dispose();
         }
     }
 }

@@ -808,6 +808,8 @@
     <Content Include="Views\Advertise\Create.cshtml" />
     <Content Include="Views\List\Car.cshtml" />
     <Content Include="Views\List\ListCatalog.cshtml" />
+    <Content Include="Views\Advertise\Vehicle.cshtml" />
+    <Content Include="Views\Advertise\SameAdv.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

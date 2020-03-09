@@ -1,0 +1,106 @@
+﻿@using AutoDealer
+@using AutoDealer.Data.Vehicle
+@model AutoDealer.Data.Vehicle.Car
+
+@{
+    ViewBag.Title = Model.Model.ModelTitle;
+    var optionCategory = ViewBag.OptionsCategory as List<Option_Category>;
+}
+
+<div class="main_wrapper">
+    <h1><strong>@Model.Manufacturers.ManufacturerName</strong> @Model.Model.ModelTitle @Model.SubModel.SubModelTitle</h1>
+    <div class="car_image_wrapper car_group">
+        <div class="big_image">
+            <a href="@(ImagePath.Imagepath + ViewBag.ImageCar)" class="car_group">
+                <img src="/Content/images/zoom.png" alt="" class="zoom" />
+                <img src="@(ImagePath.Imagepath+ViewBag.ImageCar)" />
+            </a>
+        </div>
+        @if (Model.CarGalleries.Any())
+        {
+            <div class="small_img">
+                @foreach (var image in Model.CarGalleries)
+                {
+                    <a href="@(ImagePath.Imagepath + image.ImageName)" class="car_group">
+                        <img src="@(ImagePath.Imagepath+image.ImageName)" />
+                    </a>
+                }
+
+            </div>
+        }
+
+    </div>
+    <div class="car_characteristics">
+        <div class="price">@Model.Price تومان <strong>قیمت</strong></div>
+        <div class="clear"></div>
+        <div class="features_table">
+            <div class="line grey_area">
+                <div class="left">@Model.Manufacturers.ManufacturerName @Model.Model.ModelTitle,@Model.SubModel.SubModelTitle</div>
+            </div>
+            <div class="line">
+                <div class="right">ساخت:</div>
+                <div class="left">@Model.ProductionDate</div>
+            </div>
+            <div class="line grey_area">
+                <div class="right">سوخت:</div>
+                <div class="left">@Model.Fuel</div>
+            </div>
+            <div class="line grey_area">
+                <div class="right">جعبه دنده:</div>
+                <div class="left">@Model.Transmition</div>
+            </div>
+            <div class="line">
+                <div class="right">رنگ:</div>
+                <div class="left">@Model.Color</div>
+            </div>
+            <div class="line grey_area">
+                <div class="right">درب:</div>
+                <div class="left">@Model.Doors</div>
+            </div>
+        </div>
+        <div class="wanted_line">
+            <div class="right">شما می توانید یک آگهی فروش ثبت کنید</div>
+            <div class="left">
+                <a href="@Url.Action("Create","Advertise")">اضافه کردن یک آگهی فروش</a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="info_box">
+        <div class="car_info">
+            <div class="info_right">
+                <h2>اطلاعات وسیله نقلیه</h2>
+                @foreach (var optioncategory in optionCategory)
+                {
+                    <p>
+                        <strong>@optioncategory.Op_CategortyTitle</strong>
+                        <br />
+                        @foreach (var option in Model.CarSelectedOptions.Where(o => o.Option.Op_CategoryID == optioncategory.ID))
+                        {
+                        <span> @option.Option.OptionTitle -</span> 
+                        }
+                    </p>
+                }
+            </div>
+            <div class="info_left">
+                <h2>توضیحات بیشتر</h2>
+                <p>@Model.Description</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="car_contacts">
+            <h2>جزییات تماس</h2>
+            <div class="right">
+                <div class="phones detail single_line spaced">@Model.ContactNumber</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="recent_cars">
+        <h2>آگهی های مشابه</h2>
+        @Html.Action("SameAdv")
+    </div>
+</div>
+

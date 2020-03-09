@@ -13,7 +13,7 @@
             @foreach (var item in Model)
             {
                 <div class="slide">
-                    <a href="/Car/@item.Manufacturers.ID/@item.ModelId">
+                    <a href="/Vehicle/@item.ID">
                         @if (carGalleries != null && carGalleries.Any())
                         {
                             foreach (var carGallery in carGalleries.Where(c => c.CarId == item.ID))

@@ -10,6 +10,7 @@ namespace AutoDealer
         public static string ThumbImagePath = "/Images/Cars/Thumb/";
         public static string ThumbImageServerPath = HttpContext.Current.Server.MapPath("/Images/Cars/Thumb/");
         public static string ImageServerPath = HttpContext.Current.Server.MapPath("/Images/Cars/");
+        public static string NoPhoto = "/Images/Cars/";
 
         #endregion
     }
