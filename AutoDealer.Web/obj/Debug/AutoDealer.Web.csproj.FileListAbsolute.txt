@@ -128,3 +128,11 @@ D:\Projects\AutoDealer\AutoDealer.Web\bin\AutoDealer.Utilities.pdb
 D:\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.xml
 D:\Projects\AutoDealer\AutoDealer.Web\bin\EntityFramework.SqlServer.xml
 D:\Projects\AutoDealer\AutoDealer.Web\bin\Ninject.xml
+D:\Projects\AutoDealer\AutoDealer.Web\bin\Newtonsoft.Json.dll
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Net.Http.Formatting.dll
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.dll
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.WebHost.dll
+D:\Projects\AutoDealer\AutoDealer.Web\bin\Newtonsoft.Json.xml
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Net.Http.Formatting.xml
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.xml
+D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.WebHost.xml

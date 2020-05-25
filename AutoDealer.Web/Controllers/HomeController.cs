@@ -25,6 +25,7 @@ namespace AutoDealer.Web.Controllers
         {
             ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID",
                 "ManufacturerName");
+
             return PartialView();
         }
 
