@@ -138,6 +138,10 @@
     <Compile Include="Migrations\202002161102435_change datatype trip.designer.cs">
       <DependentUpon>202002161102435_change datatype trip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005260550353_changed.cs" />
+    <Compile Include="Migrations\202005260550353_changed.designer.cs">
+      <DependentUpon>202005260550353_changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -214,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002161102435_change datatype trip.resx">
       <DependentUpon>202002161102435_change datatype trip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005260550353_changed.resx">
+      <DependentUpon>202005260550353_changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
