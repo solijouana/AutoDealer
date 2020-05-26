@@ -136,11 +136,3 @@ D:\Projects\AutoDealer\AutoDealer.Web\bin\Newtonsoft.Json.xml
 D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Net.Http.Formatting.xml
 D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.xml
 D:\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.WebHost.xml
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\Newtonsoft.Json.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Net.Http.Formatting.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.WebHost.dll
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\Newtonsoft.Json.xml
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Net.Http.Formatting.xml
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.xml
-D:\D\My Projects\Projects\AutoDealer\AutoDealer.Web\bin\System.Web.Http.WebHost.xml
