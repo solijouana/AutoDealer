@@ -70,6 +70,9 @@ namespace AutoDealer.Data.Vehicle
         [Display(Name = "وضعیت")]
         public bool IsActive { get; set; }
 
+        [Display(Name = "اسلایدر")]
+        public bool InSlider { get; set; }
+
         public virtual ICollection<Car_Selected_Option> CarSelectedOptions { get; set; }
         public virtual ICollection<Car_Gallery> CarGalleries { get; set; }
         public virtual Manufacturer Manufacturers { get; set; }

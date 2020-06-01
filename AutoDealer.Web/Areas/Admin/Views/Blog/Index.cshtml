@@ -1,0 +1,83 @@
+﻿@using AutoDealer
+@model IEnumerable<AutoDealer.Services.DTO.WebLog.Blog>
+@{
+    ViewBag.Title = "لیست بلاگ ها";
+}
+
+
+
+<h2>لیست بلاگ ها</h2>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">افزودن بلاگ</a>
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>تصویر</th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </th>
+        <th>
+            <span>کاربر</span>
+        </th>
+        <th>
+            تاریخ درج
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="thumb" width="80px" src="@(ImagePath.BlogThumbImagePath+item.ImageName)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.User.UserName)
+            </td>
+            <td>
+                <p>@item.CreateDate.ToShamsi()</p>
+            </td>
+            <td>
+                @if (item.IsDelete)
+                {
+                    <p>حذف شده</p>
+                }
+                else
+                {
+                    <p>حذف نشده</p>
+                }
+            </td>
+            <td>
+                <a class="btn btn-yellow btn-xs" href="@Url.Action("Edit", new {id = item.ID})">
+                        <i class="glyphicon glyphicon-alert"></i>
+                    </a> |
+                @if (item.IsDelete)
+                {
+                    <a class="btn btn-primary btn-xs" style="cursor: pointer" onclick="ReturnBlog(@item.ID)">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-danger btn-xs" style="cursor: pointer" onclick="DeleteBlog(@item.ID)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts
+{
+
+    <script src="/Areas/Admin/Content/BlogJS/Blog.js"></script>
+}

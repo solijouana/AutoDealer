@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convertors\DateConvertor.cs" />
     <Compile Include="Convertors\ImageResizer.cs" />
     <Compile Include="Convertors\RazorConvertors.cs" />
     <Compile Include="FileTools\FilePath.cs" />

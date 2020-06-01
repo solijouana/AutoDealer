@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseType\BaseEntity.cs" />
+    <Compile Include="User\User.cs" />
     <Compile Include="Vehicle\Car.cs" />
     <Compile Include="Vehicle\Car_Gallery.cs" />
     <Compile Include="Vehicle\Car_Selected_Option.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Vehicle\Option.cs" />
     <Compile Include="Vehicle\Option_Category.cs" />
     <Compile Include="Vehicle\SubModel.cs" />
+    <Compile Include="WebLog\Blog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

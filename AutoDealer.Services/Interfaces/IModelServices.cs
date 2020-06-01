@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoDealer.Data.Vehicle;
@@ -17,7 +18,6 @@ namespace AutoDealer.Services.Interfaces
         Model GetModelById(int modelId);
         IEnumerable<Model> GetListModelByManufacturerId(int id);
         IEnumerable<SubModel> GetSubModelsListByModelId(int modelId);
-
     }
 }
         

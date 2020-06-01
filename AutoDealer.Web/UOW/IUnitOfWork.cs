@@ -17,5 +17,7 @@ namespace AutoDealer.Web.UOW
         IOptionServices OptionServices { get; }
         IOption_CategoryServices Option_CategoryServices { get; }
         ICar_Selected_OptionServices Car_Selected_Option { get; }
+        IBlogServices BlogServices { get; }
+        IUserServices UserServices { get; }
     }
 }

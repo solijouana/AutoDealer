@@ -1,46 +1,22 @@
-﻿<div class="slider_wrapper">
+﻿@using AutoDealer
+@model IEnumerable<AutoDealer.Services.DTO.Advertise.SliderDto>
+
+
+<div class="slider_wrapper">
     <div class="home_slider" dir=ltr>
         <div class="slider slider_1">
-            <div class="slide">
-                <img src="/Content/images/placeholders/620x425.gif" alt="" />
-                <div class="description">
-                    <h2 class="title">لورم ایپسوم متن ساختگی</h2>
-                    <p class="desc"><span><strong>مایل: </strong>25,000</span><span><strong>موتور: </strong>2.6</span></p>
-                    <div class="price">$ 32 200</div>
+            @foreach (var item in Model)
+            {
+                <div class="slide">
+                    <img src="@(ImagePath.Imagepath+item.ImageName)" alt=""/>
+                    <div class="description">
+                        <h2 class="title">@item.Title</h2>
+                        <p class="desc"><span><strong>کیلومتر: </strong>@item.Trip</span></p>
+                        <div class="price">@item.Price.ToString("0,#")</div>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="/Content/images/placeholders/620x425.gif" alt="" />
-                <div class="description">
-                    <h2 class="title">لورم ایپسوم متن ساختگی</h2>
-                    <p class="desc"><span><strong>مایل: </strong>25,000</span><span><strong>موتور: </strong>2.6</span></p>
-                    <div class="price">$ 32 200</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="/Content/images/placeholders/620x425.gif" alt="" />
-                <div class="description">
-                    <h2 class="title">لورم ایپسوم متن ساختگی</h2>
-                    <p class="desc"><span><strong>مایل: </strong>25,000</span><span><strong>موتور: </strong>2.6</span></p>
-                    <div class="price">$ 32 200</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="/Content/images/placeholders/620x425.gif" alt="" />
-                <div class="description">
-                    <h2 class="title">لورم ایپسوم متن ساختگی</h2>
-                    <p class="desc"><span><strong>مایل: </strong>25,000</span><span><strong>موتور: </strong>2.6</span></p>
-                    <div class="price">$ 32 200</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="/Content/images/placeholders/620x425.gif" alt="" />
-                <div class="description">
-                    <h2 class="title">لورم ایپسوم متن ساختگی</h2>
-                    <p class="desc"><span><strong>مایل: </strong>25,000</span><span><strong>موتور: </strong>2.6</span></p>
-                    <div class="price">$ 32 200</div>
-                </div>
-            </div>
+            }
+            
         </div>
     </div>
 </div>

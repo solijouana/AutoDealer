@@ -105,5 +105,33 @@ namespace AutoDealer.Web.Areas.Admin.Controllers
 
             return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult InSlider(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.InSlider = true;
+                unitOfWork.CarServices.EditCar(car);
+
+                return Json(new {status = "Done"}, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new {status = "NotFound"}, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult OutSlider(int id)
+        {
+            var car = unitOfWork.CarServices.GetCarById(id);
+            if (car != null)
+            {
+                car.InSlider = false;
+                unitOfWork.CarServices.EditCar(car);
+
+                return Json(new { status = "Done" }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { status = "NotFound" }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

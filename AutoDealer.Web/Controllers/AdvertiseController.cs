@@ -20,9 +20,14 @@ namespace AutoDealer.Web.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+           var manufacturer = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            ViewBag.ManufacturerId = manufacturer;
+            var models = new SelectList(unitOfWork.ModelServices.GetListModelByManufacturerId(int.Parse(manufacturer.First().Value)), "ID", "ModelTitle");
+            ViewBag.ModelId = models;
+            var subModels=new SelectList(unitOfWork.SubModelServices.GetSubModelsByModelId(int.Parse(models.First().Value)),"ID","SubModelTitle");
+            ViewBag.SubModelId = subModels;
+
             ViewBag.Option_Category = unitOfWork.Option_CategoryServices.GetAllOption_Category();
-           
             return View();
         }
 
@@ -39,7 +44,7 @@ namespace AutoDealer.Web.Controllers
 
                 List<string> fileNames = new List<string>();
                 int count = 0;
-                if (imgUp.Any())
+                if (imgUp.Any()&&imgUp.Count!=0)
                 {
                     foreach (var image in imgUp)
                     {
@@ -53,6 +58,10 @@ namespace AutoDealer.Web.Controllers
                         }
                     }
                 }
+                else
+                {
+                    fileNames.Add("no-photo.jpg");
+                }
 
                 newCar.CreateTime = DateTime.Now;
                 newCar.Specific = false;
@@ -62,8 +71,14 @@ namespace AutoDealer.Web.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            var manufacturer = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            ViewBag.ManufacturerId = manufacturer;
+            var models = new SelectList(unitOfWork.ModelServices.GetListModelByManufacturerId(int.Parse(manufacturer.First().Value)), "ID", "ModelTitle");
+            ViewBag.ModelId = models;
+            var subModels = new SelectList(unitOfWork.SubModelServices.GetSubModelsByModelId(int.Parse(models.First().Value)), "ID", "SubModelTitle");
+            ViewBag.SubModelId = subModels;
             ViewBag.Option_Category = unitOfWork.Option_CategoryServices.GetAllOption_Category();
+
             return View(newCar);
         }
 

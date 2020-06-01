@@ -13,5 +13,15 @@ namespace AutoDealer
         public static string NoPhoto = "/Images/Cars/";
 
         #endregion
+
+        #region Blogs
+
+        public static string BlogImagepath = "/Images/Blogs/";
+        public static string BlogThumbImagePath = "/Images/Blogs/Thumb/";
+        public static string BlogThumbImageServerPath = HttpContext.Current.Server.MapPath("/Images/Blogs/Thumb/");
+        public static string BlogImageServerPath = HttpContext.Current.Server.MapPath("/Images/Blogs/");
+        public static string BlogNoPhoto = "/Images/Blogs/";
+
+        #endregion
     }
 }

@@ -1,0 +1,73 @@
+﻿@model AutoDealer.Services.DTO.WebLog.Blog
+@{
+    ViewBag.Title = "ویرایش وبلاگ";
+}
+
+@using (Html.BeginForm("Edit", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.CreateDate)
+    @Html.HiddenFor(m => m.ID)
+    @Html.HiddenFor(m=>m.ImageName)
+    <input type="hidden" name="@nameof(Model.UserId)" value="1" />
+
+    <div class="form-horizontal">
+        <h4>ویرایش وبلاگ</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m=>m.Description,new{id= "Model_Description" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="imgUp" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tags, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Tags, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
+                <p class="text-muted">کلمات کلیدی را با - از هم جدا کنید</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="ویرایش" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("برگشت به لیست", "Index")
+</div>
+
+@section Scripts{
+    <script src="/Areas/Admin/Content/ckeditor/ckeditor.js"></script>
+    <script src="/Areas/Admin/Content/ckeditor/adapters/jquery.js"></script>
+
+    <script>
+        $(function () {
+            $('#Model_Description').ckeditor();
+        });
+    </script>
+}
+
+

@@ -13,14 +13,13 @@ namespace AutoDealer.Services.Impelementations
     public class CarServices : ICarServices
     {
         private IRepository<Car> _carRepository;
-        private IRepository<Manufacturer> _manufacturerRepository;
+        private ICar_GalleryServices _carGalleryServices;
 
-        public CarServices(IRepository<Car> carRepository, IRepository<Manufacturer> manufacturerRepository)
+        public CarServices(IRepository<Car> carRepository, ICar_GalleryServices carGalleryServices)
         {
             _carRepository = carRepository;
-            _manufacturerRepository = manufacturerRepository;
+            _carGalleryServices = carGalleryServices;
         }
-
         public IEnumerable<Car> GetAllCars()
         {
             return _carRepository.Get(null).ToList();
@@ -80,6 +79,25 @@ namespace AutoDealer.Services.Impelementations
             filter.TotalCars = query.Count();
             var catalogCars = query.OrderByDescending(c => c.CreateTime).Paging(pager).ToList();
             return filter.SetCar(catalogCars).SetPagging(pager);
+        }
+
+        public IEnumerable<SliderDto> GetSliders()
+        {
+            List<SliderDto>SliderList=new List<SliderDto>();
+            var sliders = _carRepository.Get(c => c.InSlider).ToList();
+
+            foreach (var slider in sliders)
+            {
+                SliderList.Add(new SliderDto()
+                {
+                    ImageName = _carGalleryServices.GetCarGalleryByCarId(slider.ID).ImageName,
+                    Price = slider.Price,
+                    Title =slider.Manufacturers.ManufacturerName+ " " +slider.Model.ModelTitle,
+                    Trip = slider.Trip
+                });
+            }
+
+            return SliderList;
         }
 
         public void Dispose()

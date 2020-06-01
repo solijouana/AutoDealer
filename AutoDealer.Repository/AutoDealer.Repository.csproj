@@ -142,6 +142,34 @@
     <Compile Include="Migrations\202005260550353_changed.designer.cs">
       <DependentUpon>202005260550353_changed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005300946496_AddInSlider.cs" />
+    <Compile Include="Migrations\202005300946496_AddInSlider.designer.cs">
+      <DependentUpon>202005300946496_AddInSlider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005301244219_AddUsersandBlogs.cs" />
+    <Compile Include="Migrations\202005301244219_AddUsersandBlogs.designer.cs">
+      <DependentUpon>202005301244219_AddUsersandBlogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005301249437_IsDelete.cs" />
+    <Compile Include="Migrations\202005301249437_IsDelete.designer.cs">
+      <DependentUpon>202005301249437_IsDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005301328126_ImageNameforBlog.cs" />
+    <Compile Include="Migrations\202005301328126_ImageNameforBlog.designer.cs">
+      <DependentUpon>202005301328126_ImageNameforBlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005310813143_ForeignKeyUserId.cs" />
+    <Compile Include="Migrations\202005310813143_ForeignKeyUserId.designer.cs">
+      <DependentUpon>202005310813143_ForeignKeyUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005310834569_UserId.cs" />
+    <Compile Include="Migrations\202005310834569_UserId.designer.cs">
+      <DependentUpon>202005310834569_UserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005310837217_UserIdNullable.cs" />
+    <Compile Include="Migrations\202005310837217_UserIdNullable.designer.cs">
+      <DependentUpon>202005310837217_UserIdNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -221,6 +249,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005260550353_changed.resx">
       <DependentUpon>202005260550353_changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005300946496_AddInSlider.resx">
+      <DependentUpon>202005300946496_AddInSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005301244219_AddUsersandBlogs.resx">
+      <DependentUpon>202005301244219_AddUsersandBlogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005301249437_IsDelete.resx">
+      <DependentUpon>202005301249437_IsDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005301328126_ImageNameforBlog.resx">
+      <DependentUpon>202005301328126_ImageNameforBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005310813143_ForeignKeyUserId.resx">
+      <DependentUpon>202005310813143_ForeignKeyUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005310834569_UserId.resx">
+      <DependentUpon>202005310834569_UserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005310837217_UserIdNullable.resx">
+      <DependentUpon>202005310837217_UserIdNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

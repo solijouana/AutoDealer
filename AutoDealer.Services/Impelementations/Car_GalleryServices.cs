@@ -10,11 +10,10 @@ namespace AutoDealer.Services.Impelementations
     {
         private IRepository<Car_Gallery> _carGalleryRepository;
 
-        public Car_GalleryServices(IRepository<Car_Gallery> carRepository)
+        public Car_GalleryServices(IRepository<Car_Gallery> carGalleryRepository)
         {
-            _carGalleryRepository = carRepository;
+            _carGalleryRepository = carGalleryRepository;
         }
-
         public IEnumerable<Car_Gallery> CarGalleries()
         {
             return _carGalleryRepository.Get(null).ToList();

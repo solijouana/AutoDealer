@@ -31,11 +31,13 @@
             </div>
             <div class="select_wrapper">
                 <label><span>* </span><strong>مدل: </strong></label>
-                <select id="ddlModel" name="@nameof(Model.ModelId)" style="width: 200px" onchange="GetSubModel(this.value)"></select>
+                @Html.DropDownList("ModelId", null, new { @id = "ddlModel", @style = "width:200px;", @onchange = "javascript:GetSubModel(this.value);" })
+                @Html.ValidationMessageFor(m => m.ModelId)
             </div>
             <div class="select_wrapper">
                 <label><span>*</span><strong>تیپ</strong></label>
-                <select id="ddlSubModel" name="@nameof(Model.SubModelId)" style="width: 200px"></select>
+                @Html.DropDownList("SubModelId", null, new {@id= "ddlSubModel",  @style = "width:200px;"})
+                @Html.ValidationMessageFor(m => m.SubModelId)
             </div>
             <div class="select_wrapper">
                 <label><span>*</span><strong>سال ساخت</strong></label>

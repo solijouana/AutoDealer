@@ -71,6 +71,9 @@
                         <th>
                             وضعیت
                         </th>
+                        <th>
+                            اسلایدر
+                        </th>
                         <th></th>
                     </tr>
                 </thead>
@@ -115,7 +118,17 @@
                                     <p class="text-dager">حذف شده</p>
                                 }
                             </td>
+                            <td>
+                               @if (car.InSlider)
+                               {
+                                   <p class="text-success">می باشد</p>
+                               }
 
+                               else
+                               {
+                                   <p class="text-dager">نمی باشد</p>
+                               }
+                            </td>
                             <td>
                                 @if (car.Specific)
                                 {
@@ -152,6 +165,19 @@
                                 {
                                     <a class="btn btn-danger btn-circle btn-xs" onclick="DeleteAdv(@car.ID)">
                                         <i class="glyphicon glyphicon-trash"></i>
+                                    </a>
+                                }
+                                @if (car.InSlider)
+                                {
+                                    <a class="btn btn-danger btn-circle btn-xs" onclick="OutSlider(@car.ID)">
+                                        <i class="glyphicon glyphicon-minus"></i>
+                                    </a>
+                                }
+                                else
+                                {
+
+                                    <a class="btn btn-success btn-circle btn-xs" onclick="InSlider(@car.ID)">
+                                        <i class="glyphicon glyphicon-plus"></i>
                                     </a>
                                 }
                             </td>

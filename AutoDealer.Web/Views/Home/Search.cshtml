@@ -7,13 +7,11 @@
         {
             <label><strong>سازنده:</strong></label>
             <div class="select_box_1">
-                @Html.DropDownList("ManufacturerId", null, new { @class = "select_1", onchange = "GetModel(this.value)", id = "ddlManufacturer" })
+                @Html.DropDownList("ManufacturerId", null, new { @class = "select_1", onchange = "GetModel(this.value)", @id = "ddlManufacturer" })
             </div>
             <label><strong>مدل:</strong></label>
             <div class="select_box_1">
-                <select class="select_1" id="ddlModel" name="ModelId">
-                    <option value="0">مدل</option>
-                </select>
+                @Html.DropDownList("ModelId", null, new { @class = "select_1", @id = "ddlModel" })
             </div>
             <input class="btn_search" type="submit" value="جستجو"/>
         }

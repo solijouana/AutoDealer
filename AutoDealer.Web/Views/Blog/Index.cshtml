@@ -1,0 +1,58 @@
+﻿@using AutoDealer
+@model IEnumerable<AutoDealer.Services.DTO.WebLog.Blog>
+@{
+    ViewBag.Title = "لیست بلاگ ها";
+}
+
+<div class="breadcrumbs">
+    <a href="/">صفحه نخست</a>
+    <img src="/Content/images/marker_2.gif" alt="وب لاگ">
+    <span>وبلاگ</span>
+</div>
+
+<div class="main_wrapper">
+    <h1>به وب لاگ ما خوش آمدید</h1>
+    <div class="blog">
+        @foreach (var item in Model)
+        {
+            <div class="blog_post">
+                <a href="@Url.Action("ShowBlog",new{id=item.ID})" class="thumb">
+                    <img src="@(ImagePath.BlogThumbImagePath+item.ImageName)" alt="@item.ImageName">
+                </a>
+                <div class="blog_desc">
+                    <h4><a href="@Url.Action("ShowBlog",new{id=item.ID})">@item.ShortDescription</a></h4>
+                    <div class="grey_area">
+                        <a href="#" class="blog_date">@item.CreateDate.ToShamsi()</a>
+                        <a href="#" class="blog_author">@item.User.UserName</a>
+                        <div class="blog_category">
+                            @{
+                                string[] tags = item.Tags.Split('-');
+                            }
+                            @foreach (string tag in tags)
+                            {
+                                <a href="">@tag ,</a>
+                            }
+
+                        </div>
+                        <a href="#" class="blog_comments">7 نظرات</a>
+                    </div>
+                    <div class="post">
+                        @Html.Raw(item.Description.Substring(0, item.Description.Length > 200 ? 200 : item.Description.Length))
+                    </div>
+                    <a href="@Url.Action("ShowBlog",new{id=item.ID})" class="more markered">ادامه مطلب</a>
+                </div>
+            </div>
+        }
+        <div class="pagination">
+            <ul>
+               @for (int i = 1; i < ViewBag.pageCount; i++)
+               {
+                   <li class="@((ViewBag.CurrentPage==i)?"active":"")"><a href="/Blog/Index?pageId=@i">@i</a></li>
+               }
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear mb1"></div>
+</div>

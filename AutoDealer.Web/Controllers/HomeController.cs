@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using AutoDealer.Web.UOW;
 
 namespace AutoDealer.Web.Controllers
@@ -18,13 +19,17 @@ namespace AutoDealer.Web.Controllers
 
         public ActionResult Slider()
         {
-            return PartialView();
+            return PartialView(unitOfWork.CarServices.GetSliders());
         }
 
         public ActionResult Search()
         {
-            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID",
+            var manufacturer= new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID",
                 "ManufacturerName");
+            ViewBag.ManufacturerId = manufacturer;
+
+            var models=new SelectList(unitOfWork.ModelServices.GetListModelByManufacturerId(int.Parse(manufacturer.First().Value)),"ID","ModelTitle");
+            ViewBag.ModelId = models;
 
             return PartialView();
         }

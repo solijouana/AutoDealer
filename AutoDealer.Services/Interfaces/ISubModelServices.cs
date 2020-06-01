@@ -11,7 +11,8 @@ namespace AutoDealer.Services.Interfaces
         void EditSubModel(SubModel editedModel);
         void DeleteSubModel(SubModel model);
         void DeleteSubModel(int id);
-        SubModel GetSubModelById(int modelId);
-      
+        SubModel GetSubModelById(int subModelId);
+        List<SubModel> GetSubModelsByModelId(int modelId);
+
     }
 }

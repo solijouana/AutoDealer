@@ -43,9 +43,14 @@ namespace AutoDealer.Services.Impelementations
             _subRepository.Save();
         }
 
-        public SubModel GetSubModelById(int modelId)
+        public SubModel GetSubModelById(int subModelId)
         {
-           return _subRepository.GetById(modelId);
+           return _subRepository.GetById(subModelId);
+        }
+
+        public List<SubModel> GetSubModelsByModelId(int modelId)
+        {
+            return _subRepository.Get(s => s.ModelID == modelId).ToList();
         }
 
         public void Dispose()

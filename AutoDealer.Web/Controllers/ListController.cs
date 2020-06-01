@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using AutoDealer.Services.DTO.Advertise;
 using AutoDealer.Web.UOW;
 
@@ -15,7 +16,18 @@ namespace AutoDealer.Web.Controllers
         public ActionResult Car(int manufacturerId, int modelId)
         {
             ViewBag.ManufacturerName = unitOfWork.ManufacturerServices.GetManufacturerNameById(manufacturerId);
-            ViewBag.ManufacturerId = new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            List<SelectListItem>listItems=new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Value = "0",
+                    Text = @"مدل را انتخاب کنید"
+                }
+            };
+
+            var manufacturer= new SelectList(unitOfWork.ManufacturerServices.GetAllManufacturers(), "ID", "ManufacturerName");
+            listItems.AddRange(manufacturer);
+            ViewBag.ManufacturerId = listItems;
             return View(unitOfWork.CarServices.GetCatalogCarsByFilter(new AdvertiseCatalogDto
             {
                 ManufacturerId = manufacturerId,

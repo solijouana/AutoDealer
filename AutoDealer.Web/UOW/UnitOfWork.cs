@@ -1,6 +1,8 @@
 ﻿using AutoDealer.Data.Vehicle;
 using AutoDealer.Repository.ApplicationContext;
 using AutoDealer.Repository.DataTransactions;
+using AutoDealer.Services.DTO.User;
+using AutoDealer.Services.DTO.WebLog;
 using AutoDealer.Services.Impelementations;
 using AutoDealer.Services.Interfaces;
 
@@ -22,7 +24,7 @@ namespace AutoDealer.Web.UOW
             {
                 if (_carServices == null)
                 {
-                    _carServices = new CarServices(new Repository<Car>(_context),new Repository<Manufacturer>(_context));
+                    _carServices = new CarServices(new Repository<Car>(_context),new Car_GalleryServices(new Repository<Car_Gallery>(_context)));
                 }
 
                 return _carServices;
@@ -131,6 +133,36 @@ namespace AutoDealer.Web.UOW
                 }
 
                 return _carSelectedOption;
+            }
+        }
+
+        private IBlogServices _blogServices;
+
+        public IBlogServices BlogServices
+        {
+            get
+            {
+                if (_blogServices == null)
+                {
+                    _blogServices=new BlogServices(new Repository<Blog>(_context));
+                }
+
+                return _blogServices;
+            }
+        }
+
+        private IUserServices _userServices;
+
+        public IUserServices UserServices
+        {
+            get
+            {
+                if (_userServices == null)
+                {
+                    _userServices=new UserServices(new Repository<User>(_context));
+                }
+
+                return _userServices;
             }
         }
 

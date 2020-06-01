@@ -85,3 +85,27 @@ function ReturnSpecific(id) {
             }
         });
 }
+
+function InSlider(id) {
+    $.get("/Admin/Advertise/InSlider/" + id,
+        function (res) {
+            if (res.status === "Done") {
+                var take = $("#TakeEntity").val();
+                changeEntity(take);
+            } else {
+                alert(res.status);
+            }
+        });
+}
+
+function OutSlider(id) {
+    $.get("/Admin/Advertise/OutSlider/" + id,
+        function (res) {
+            if (res.status === "Done") {
+                var take = $("#TakeEntity").val();
+                changeEntity(take);
+            } else {
+                alert(res.status);
+            }
+        });
+}
